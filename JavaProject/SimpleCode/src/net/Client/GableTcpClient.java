@@ -26,6 +26,7 @@ public class GableTcpClient {
             }
             is.close();
             os.close();
+            s.close();
         } catch (UnknownHostException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
