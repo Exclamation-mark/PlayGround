@@ -10,6 +10,8 @@ public class FivesTimer extends Thread {
         this.receiveListener = receiveListener;
     }
     public void setN(int n) {this.n = n;}
+
+    @Override
     public void run() {
         while (true) {
             try {
