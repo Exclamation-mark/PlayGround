@@ -1,10 +1,35 @@
 <app-sidenav>
   <div class="container">
-    <h1 class="mat-display-3">Main Content</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis nobis illum animi temporibus omnis.
-      Consequatur qui fugit facilis reiciendis deserunt, debitis beatae! Illo dolorem asperiores nisi excepturi eum
-      veritatis cupiditate.
-    </p>
+    <div>
+      　　<div style="background-color: pink;height: 60px;position:fixed; width:72px;">
+
+      <button mat-raised-button class="example-action-button" (click)="addLink()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+      </button>
+    </div>
+      　　<div style="background-color: orange;height: 60px;margin-left:72px;">
+              <nav mat-tab-nav-bar [backgroundColor]="background">
+                <a mat-tab-link *ngFor="let link of links"
+                   (click)="activeLink = link"
+                   [active]="activeLink == link">{{link}}</a>
+              </nav>
+         </div>
+    </div>
+    <div>
+      <mat-grid-list cols="24" rowHeight="100px">
+        <mat-grid-tile
+          [colspan]="20"
+          [rowspan]="1">
+        </mat-grid-tile>
+        <mat-grid-tile
+          [colspan]="4"
+          [rowspan]="1">
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+
+    <button mat-raised-button class="example-action-button" (click)="toggleBackground()">
+      Toggle background
+    </button>
   </div>
 </app-sidenav>
