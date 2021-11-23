@@ -1,0 +1,13 @@
+<div style="height: 100%;overflow-y:auto;width: 100%;background-color: pink;">
+  <ag-grid-angular
+    style="width: 600px; height: 3500px;"
+    class="ag-theme-alpine"
+    [undoRedoCellEditing]="true"
+    [undoRedoCellEditingLimit]="20"
+    [pagination]="true"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+  >
+  </ag-grid-angular>
+  <div style="margin-bottom: 200px"></div>
+</div>

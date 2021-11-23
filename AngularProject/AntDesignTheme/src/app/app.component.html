@@ -1,0 +1,81 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="256px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a href="https://ng.ant.design/" target="_blank">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+        <h1>Ant Design Of Angular</h1>
+      </a>
+    </div>
+    <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/welcome">Welcome</a>
+          </li>
+          <li nz-submenu nzTitle="Navigation Two" nzIcon="appstore">
+            <ul>
+              <li nz-menu-item>Option 5</li>
+              <li nz-menu-item>Option 6</li>
+              <li nz-submenu nzTitle="Submenu">
+                <ul>
+                  <li nz-menu-item>Option 7</li>
+                  <li nz-menu-item>Option 8</li>
+                  <li nz-submenu nzTitle="Submenu">
+                    <ul>
+                      <li nz-menu-item>Option 9</li>
+                      <li nz-menu-item>Option 10</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/welcome/agGrid">Ag Grid</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/welcome/nav">Nav Bar</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/welcome/reSize">Resize</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>Basic Form</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <i class="trigger"
+               nz-icon
+               style="font-size: 16px"
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></i>
+        </span>
+        <span class="header-trigger" (click)="toggleTheme()">
+          <i class="trigger"
+             style="font-size: 16px"
+             nz-icon nzType="skin" nzTheme="outline"></i>
+        </span>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
