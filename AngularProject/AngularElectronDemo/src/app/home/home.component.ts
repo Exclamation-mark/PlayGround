@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  editorOptions = {theme: 'vs-light', language: 'javascript'};
+  code = 'function x() {\nconsole.log("Hello world!");\n}';
   constructor(private router: Router) { }
 
   ngOnInit(): void {

@@ -21,7 +21,7 @@ function createWindow(): BrowserWindow {
     webPreferences: {
       nodeIntegration: true,
       allowRunningInsecureContent: (serve) ? true : false,
-      contextIsolation: true,  // false if you want to run e2e test with Spectron
+      contextIsolation: false,  // false if you want to run e2e test with Spectron
     },
   });
 
