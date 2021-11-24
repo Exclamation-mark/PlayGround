@@ -2,6 +2,7 @@
   "PAGES": {
       "HOME": {
           "TITLE": "App works !",
+          "reload": "Reload",
           "GO_TO_DETAIL": "Go to Detail"
       },
       "DETAIL": {
