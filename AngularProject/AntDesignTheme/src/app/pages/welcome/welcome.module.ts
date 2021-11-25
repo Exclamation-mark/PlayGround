@@ -14,11 +14,13 @@ import {NgxResizableModule} from '@3dgenomes/ngx-resizable';
 import {ResizeObserverModule} from '@ng-web-apis/resize-observer';
 import {MonacoEditorModule} from '@materia-ui/ngx-monaco-editor';
 import { NavComponent } from './nav/nav.component';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
 @NgModule({
   imports: [
     WelcomeRoutingModule,
     CommonModule,
+    NzTabsModule,
     NzCollapseModule,
     NzRadioModule,
     NgxResizableModule,
