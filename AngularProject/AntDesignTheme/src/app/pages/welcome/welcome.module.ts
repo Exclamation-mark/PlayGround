@@ -15,13 +15,23 @@ import {ResizeObserverModule} from '@ng-web-apis/resize-observer';
 import {MonacoEditorModule} from '@materia-ui/ngx-monaco-editor';
 import { NavComponent } from './nav/nav.component';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
-
+import { ButtonCellRendererComponent } from './button-cell-renderer/button-cell-renderer.component';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 @NgModule({
   imports: [
     WelcomeRoutingModule,
     CommonModule,
     NzTabsModule,
     NzCollapseModule,
+    NzMessageModule,
+    NzButtonModule,
+    NzMenuModule,
+    NzIconModule,
+    NzDropDownModule,
     NzRadioModule,
     NgxResizableModule,
     ResizeObserverModule,
@@ -29,7 +39,7 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
     MonacoEditorModule,
     AgGridModule.withComponents([])
   ],
-  declarations: [WelcomeComponent, AgGridDemoComponent, ResizeDemoComponent, NavComponent],
+  declarations: [WelcomeComponent, AgGridDemoComponent, ResizeDemoComponent, NavComponent, ButtonCellRendererComponent],
   exports: [WelcomeComponent],
 })
 export class WelcomeModule {}

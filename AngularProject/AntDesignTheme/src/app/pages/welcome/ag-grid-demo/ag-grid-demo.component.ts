@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ColDef} from 'ag-grid-community';
+import {ButtonCellRendererComponent} from '../button-cell-renderer/button-cell-renderer.component';
 
 @Component({
   selector: 'app-ag-grid-demo',
@@ -12,9 +13,24 @@ export class AgGridDemoComponent implements OnInit {
     {field: 'id', headerName: 'ID' },
     {field: 'make' , resizable: true, editable: true},
     { field: 'model', resizable: true, editable: true},
-    { field: 'price'}
+    { field: 'price'},
+    {
+      field: '操作',
+      minWidth: 300,
+      cellRenderer: 'customRenderer',
+    }
   ];
-
+  frameworkComponents = {
+    customRenderer: ButtonCellRendererComponent,
+  };
+  defaultColDef = {
+    editable: false,
+    sortable: false,
+    flex: 1,
+    minWidth: 100,
+    filter: false,
+    resizable: false,
+  };
   rowData: { id?: number, make: string, model: string, price: number}[] = [
     { make: 'Toyota', model: 'Celica', price: 35000 },
     { make: 'Ford', model: 'Mondeo', price: 32000 },
