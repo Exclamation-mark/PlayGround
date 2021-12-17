@@ -3,6 +3,8 @@ package com.example;
 import com.sarojaba.prettytable4j.PrettyTable;
 import io.bretty.console.table.Alignment;
 import io.bretty.console.table.Table;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
 import org.junit.jupiter.api.Test;
 
 public class TableDemoTest {
@@ -23,11 +25,15 @@ public class TableDemoTest {
     public void testString2() {
         PrettyTable pt = PrettyTable
                 .fieldNames("name", "age", "city")
-                .addRow("johnassssssssssssssssssssssssssssssssssss", 22, "new york")
-                .addRow("elizabeth", 426165223, "chsaddddddddddddddddddddddddddasdddddddddddddddddddddddddddddddddddddddddicago")
-                .addRow("bill", 31, "atxsasdasdasdddddddddddddddddddddddddddddddddddddddddlanta")
+                .addRow("asxas", 22, "new york")
+                .addRow("elizabeth", 22, "xas")
+                .addRow("bill", 31, "axs")
+                .addRow("bill", 31, "xas")
+                .addRow("bill", 31, "xasd")
                 .addRow("mary", 18, "los angeles");
-
-        System.out.println(pt);
+        for (int i = 0; i < 100; i++) {
+            pt.addRow("index_" + i, i, "city_" + i + "_" + RandomStringUtils.random(15, true, false));
+        }
+        System.out.println(pt.toString());
     }
 }
