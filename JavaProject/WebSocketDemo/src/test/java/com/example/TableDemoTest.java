@@ -30,7 +30,7 @@ public class TableDemoTest {
                 .addRow("bill", 31, "axs")
                 .addRow("bill", 31, "xas")
                 .addRow("bill", 31, "xasd")
-                .addRow("mary", 18, "los angeles");
+                .addRow("mary", 18, "los angeles ");
         for (int i = 0; i < 100; i++) {
             pt.addRow("index_" + i, i, RandomStringUtils.random(15, true, false) + "city_" + i + "_");
         }
