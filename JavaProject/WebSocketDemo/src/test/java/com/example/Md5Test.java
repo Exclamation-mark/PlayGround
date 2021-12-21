@@ -5,7 +5,7 @@ import de.bripkens.gravatar.Gravatar;
 import de.bripkens.gravatar.Rating;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
-import java.util.*;
+import java.util.Base64;
 import java.io.*;
 import java.security.*;
 
@@ -16,6 +16,7 @@ public class Md5Test {
         String email = "16943922@qq.com";
         String hash = md5Hex(email);
         System.out.println(hash);
+        System.out.println(Integer.toHexString(10));
     }
 
     @Test
