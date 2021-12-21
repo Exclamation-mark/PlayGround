@@ -57,6 +57,12 @@
             <artifactId>console-table-builder</artifactId>
             <version>1.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>de.bripkens</groupId>
+            <artifactId>gravatar4java</artifactId>
+            <version>1.2</version>
+        </dependency>
     </dependencies>
 
     <build>

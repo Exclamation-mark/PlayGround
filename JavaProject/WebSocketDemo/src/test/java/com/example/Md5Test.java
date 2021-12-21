@@ -1,5 +1,9 @@
 package com.example;
 
+import de.bripkens.gravatar.DefaultImage;
+import de.bripkens.gravatar.Gravatar;
+import de.bripkens.gravatar.Rating;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
 import java.util.*;
 import java.io.*;
@@ -12,6 +16,19 @@ public class Md5Test {
         String email = "16943922@qq.com";
         String hash = md5Hex(email);
         System.out.println(hash);
+    }
+
+    @Test
+    public void testImageUrl() {
+        for (int i = 0; i < 10; i++) {
+            String gravatarImageURL = new Gravatar()
+                    .setSize(150)
+                    .setHttps(true)
+                    .setRating(Rating.ADULT_ONLY)
+                    .setStandardDefaultImage(DefaultImage.IDENTICON)
+                    .getUrl(RandomStringUtils.random(10, true, false) + "@qq.com");
+            System.out.println(gravatarImageURL);
+        }
     }
 
     public static String hex(byte[] array) {
