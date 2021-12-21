@@ -37,4 +37,18 @@ public class TableDemoTest {
         pt.sortTable("city");
         System.out.println(pt.toString());
     }
+
+    @Test
+    public void testArea() {
+        System.out.println(judge(4,20, 20,23));
+        System.out.println(judge(4,21, 20,23));
+        System.out.println(judge(4,25, 20,23));
+        System.out.println(judge(24,25, 20,23));
+        System.out.println(judge(30,35, 33,53));
+        System.out.println(judge(30,35, 30,53));
+    }
+
+    public static boolean judge(int a, int b, int c, int d) {
+        return Math.max(a, c) < Math.min(b, d);
+    }
 }
