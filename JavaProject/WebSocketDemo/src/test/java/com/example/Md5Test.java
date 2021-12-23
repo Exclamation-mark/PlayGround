@@ -27,7 +27,7 @@ public class Md5Test {
                     .setHttps(true)
                     .setRating(Rating.ADULT_ONLY)
                     .setStandardDefaultImage(DefaultImage.IDENTICON)
-                    .getUrl(RandomStringUtils.random(10, true, false) + "@qq.com");
+                    .getUrl(RandomStringUtils.random(10, true, false) + "x@qq.com");
             System.out.println(gravatarImageURL);
         }
     }
