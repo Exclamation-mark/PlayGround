@@ -48,6 +48,6 @@ public class Md5Test {
         } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        return null;
+        return "";
     }
 }
