@@ -6,11 +6,30 @@ import de.bripkens.gravatar.Rating;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
+
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.io.*;
 import java.security.*;
 
 public class Md5Test {
+
+    @Test
+    public void test1000(){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < 30000; i++) {
+            stringBuilder.append("\"" + i + "\": \"" + (RandomStringUtils.random(30, true, true)) + "\",");
+        }
+        File file = new File("C:\\Users\\Administrator\\Documents\\证据\\tmp.txt");
+        try {
+            BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(file));
+            bufferedOutputStream.write(stringBuilder.toString().getBytes(StandardCharsets.UTF_8));
+            bufferedOutputStream.flush();
+            bufferedOutputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Test
     public void testMd5(){
