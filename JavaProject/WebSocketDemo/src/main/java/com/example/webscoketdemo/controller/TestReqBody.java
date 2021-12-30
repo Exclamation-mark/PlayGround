@@ -9,19 +9,7 @@ import java.util.Iterator;
 /**
  * @author Administrator
  */
-public class TestReqBody extends ObjectNode {
-
-    public TestReqBody() {
-        super(WebScoketDemoApplication.MAPPER.getNodeFactory());
-    }
-
-    public TestReqBody(ObjectNode father) {
-        super(WebScoketDemoApplication.MAPPER.getNodeFactory());
-        Iterator<String> stringIterator = father.fieldNames();
-        stringIterator.forEachRemaining(s -> {
-            this.set(s, father.path(s));
-        });
-    }
+public class TestReqBody extends AbstractJsonBody {
 
     public Integer getA() {
         return this.path("a").asInt();

@@ -18,7 +18,8 @@ public class TestController {
         ObjectNode result = null;
         for (int i = 0; i < 10; i++) {
             if (Objects.equals(isTran, true)) {
-                TestReqBody reqBody = new TestReqBody(body);
+                TestReqBody reqBody = new TestReqBody();
+                reqBody.from(body);
                 System.out.println("receive: " + reqBody.toPrettyString());
                 result = reqBody;
                 System.out.println("a");
