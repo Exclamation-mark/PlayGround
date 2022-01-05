@@ -42,9 +42,13 @@ public class Md5Test {
     @Test
     public void testConcat(){
         String postCode = "abcdef";
-        String a = StringUtils.substring(postCode, 0, 3);
-        String b = StringUtils.substring(postCode, 3);
-        System.out.println(a + " " + b);
+        if (StringUtils.length(postCode) == 6) {
+            String a = StringUtils.substring(postCode, 0, 3);
+            String b = StringUtils.substring(postCode, 3);
+            System.out.println(a + " " + b);
+        }else {
+            System.out.println(postCode);
+        }
     }
 
     @Test
