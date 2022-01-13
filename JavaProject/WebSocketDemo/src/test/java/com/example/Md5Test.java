@@ -4,6 +4,7 @@ import de.bripkens.gravatar.DefaultImage;
 import de.bripkens.gravatar.Gravatar;
 import de.bripkens.gravatar.Rating;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.io.*;
 import java.security.*;
+import java.util.Optional;
 
 public class Md5Test {
 
@@ -29,6 +31,22 @@ public class Md5Test {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void testOptional(){
+        for (int i = 0; i < 10; i++) {
+            final int tmp = i;
+            String email = getEmailStr();
+            System.out.println(Optional.ofNullable(email).map(s -> s + " " + (tmp + 1)).orElse("empty"));
+        }
+    }
+
+    private String getEmailStr() {
+        if (RandomUtils.nextBoolean()) {
+            return "16943922@qq.com";
+        }
+        return null;
     }
 
     @Test
