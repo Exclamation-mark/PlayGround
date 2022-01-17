@@ -1,6 +1,8 @@
 package com.example.webscoketdemo.controller;
 
+import com.example.webscoketdemo.beans.Result;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Objects;
@@ -31,5 +33,10 @@ public class TestController {
         }
         System.out.println("耗时: " + (System.currentTimeMillis() - start));
         return result;
+    }
+
+    @GetMapping("/r")
+    public ObjectNode randomStr() {
+        return Result.successWithStr(RandomStringUtils.random(15, true, false));
     }
 }
