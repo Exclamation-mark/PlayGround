@@ -3,6 +3,7 @@ package com.example;
 import io.bretty.console.table.Alignment;
 import io.bretty.console.table.Table;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -10,8 +11,16 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.function.Predicate;
 
 public class PostCodeTest {
+
+    @Test
+    public void testPre(){
+        Predicate<String> predicate = s -> s.equalsIgnoreCase("def");
+        Assertions.assertTrue(predicate.test("def"));
+        Assertions.assertFalse(predicate.test("daef"));
+    }
 
     private static class PostCodeData{
         String city;
