@@ -22,6 +22,15 @@ public class PostCodeTest {
         Assertions.assertFalse(predicate.test("daef"));
     }
 
+    @Test
+    public void testMatch() {
+        String s = "ddp";
+        String s1 = "DDP";
+        Assertions.assertFalse(s.matches(" ^[Dd][Dd][Pp]$"));
+        Assertions.assertTrue(s.matches("^[Dd][Dd][Pp]$"));
+        Assertions.assertTrue(s1.matches("^[Dd][Dd][Pp]$"));
+    }
+
     private static class PostCodeData{
         String city;
         String hub;
