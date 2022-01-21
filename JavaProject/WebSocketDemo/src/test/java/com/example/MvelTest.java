@@ -22,19 +22,19 @@ public class MvelTest {
         map.put("c", 10);
 
         Object object = MVEL.eval(expression, map);
-        Assertions.assertTrue(object != null);
+        Assertions.assertNotNull(object);
         Assertions.assertTrue(object instanceof Boolean);
-        Assertions.assertTrue(object.equals(true));
+        Assertions.assertEquals(true, object);
 
         Object greR = MVEL.eval("c >= 10", map);
-        Assertions.assertTrue(greR != null);
+        Assertions.assertNotNull(greR);
         Assertions.assertTrue(greR instanceof Boolean);
-        Assertions.assertTrue(greR.equals(true));
+        Assertions.assertEquals(true, greR);
 
         Object greR2 = MVEL.eval("c * 2 > 20", map);
-        Assertions.assertTrue(greR2 != null);
+        Assertions.assertNotNull(greR2);
         Assertions.assertTrue(greR2 instanceof Boolean);
-        Assertions.assertTrue(greR2.equals(false));
+        Assertions.assertEquals(false, greR2);
     }
 
     @Test
