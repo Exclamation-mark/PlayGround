@@ -67,6 +67,11 @@
             <artifactId>gravatar4java</artifactId>
             <version>1.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.deliveredtechnologies</groupId>
+            <artifactId>rulebook-core</artifactId>
+            <version>0.12</version>
+        </dependency>
     </dependencies>
 
     <build>
