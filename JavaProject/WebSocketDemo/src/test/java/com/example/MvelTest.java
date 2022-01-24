@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.mvel2.MVEL;
 
 import java.util.Map;
-import java.util.function.Predicate;
 
 public class MvelTest {
 
