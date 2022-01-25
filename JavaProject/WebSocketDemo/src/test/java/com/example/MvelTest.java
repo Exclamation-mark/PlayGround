@@ -28,6 +28,7 @@ public class MvelTest {
 
         Object greR2 = MVEL.eval("c * 2 >= 20", map);
         validate(greR2);
+        System.out.println("end");
     }
 
     public void validate(Object v) {
