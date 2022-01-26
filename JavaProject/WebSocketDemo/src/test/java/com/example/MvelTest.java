@@ -17,13 +17,19 @@ public class MvelTest {
 
     @Test
     public void testStream() {
-        Stream<Integer> stream = Stream.of(1, 9, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 18, null);
-        stream.filter(Objects::nonNull)
+        Stream<Integer> stream = Stream.of(1, 9, 2,
+                3, 4, 5, 6,
+                7, 8, 10, 11,
+                12, 13, 14, 15,
+                16, 17, 18, 19,
+                18, null);
+        Object[] objects = stream.filter(Objects::nonNull)
                 .sorted(Comparator.reverseOrder())
                 .filter(v -> v > 5 && v % 2 == 0)
                 .distinct()
                 .limit(3)
-                .forEach(System.out::println);
+                .toArray();
+        Assertions.assertEquals(3, objects.length);
     }
 
     @Test
