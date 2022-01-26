@@ -8,9 +8,22 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mvel2.MVEL;
 
+import java.util.Comparator;
 import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Stream;
 
 public class MvelTest {
+
+    @Test
+    public void testStream() {
+        Stream<Integer> stream = Stream.of(1, 9, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 18, null);
+        stream.filter(Objects::nonNull)
+                .sorted(Comparator.reverseOrder())
+                .filter(v -> v > 5 && v % 2 == 0)
+                .distinct()
+                .forEach(System.out::println);
+    }
 
     @Test
     public void testPre(){
