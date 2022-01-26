@@ -22,6 +22,7 @@ public class MvelTest {
                 .sorted(Comparator.reverseOrder())
                 .filter(v -> v > 5 && v % 2 == 0)
                 .distinct()
+                .limit(3)
                 .forEach(System.out::println);
     }
 
