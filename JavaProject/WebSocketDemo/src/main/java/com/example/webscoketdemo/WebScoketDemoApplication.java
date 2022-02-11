@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WebScoketDemoApplication {
     public static final ObjectMapper MAPPER = new ObjectMapper();
     public static void main(String[] args) {
+        assert args != null;
         SpringApplication.run(WebScoketDemoApplication.class, args);
     }
 
