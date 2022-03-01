@@ -11,6 +11,7 @@ import org.mvel2.MVEL;
 import java.util.Comparator;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
 import java.util.stream.Stream;
 
 public class MvelTest {
@@ -30,6 +31,28 @@ public class MvelTest {
                 .limit(3)
                 .toArray();
         Assertions.assertEquals(3, objects.length);
+    }
+
+    @Test
+    public void testException() {
+        randomException();
+        System.out.println("Hello World");
+    }
+
+    @Test
+    public void testExceptionV2() {
+        try {
+            randomException();
+        } finally {
+            System.out.println("Hello World");
+        }
+    }
+
+    private void randomException() {
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            throw new RuntimeException("sad");
+        }
     }
 
     @Test
