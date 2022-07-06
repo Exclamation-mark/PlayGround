@@ -7,8 +7,8 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { CommonModule } from '@angular/common';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { FormsModule } from '@angular/forms';
-import { AgGridDemoComponent } from './ag-grid-demo/ag-grid-demo.component';
-import {AgGridModule} from 'ag-grid-angular';
+import {AgGridDemoComponent} from './ag-grid-demo/ag-grid-demo.component';
+import { AgGridModule } from 'ag-grid-angular-legacy';
 import { ResizeDemoComponent } from './resize-demo/resize-demo.component';
 import {NgxResizableModule} from '@3dgenomes/ngx-resizable';
 import {ResizeObserverModule} from '@ng-web-apis/resize-observer';
@@ -21,6 +21,8 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzMessageModule } from 'ng-zorro-antd/message';
+import {CustomHeaderComponent} from './custom-header/custom-header.component';
+import {NzSelectModule} from 'ng-zorro-antd/select';
 @NgModule({
   imports: [
     WelcomeRoutingModule,
@@ -37,9 +39,10 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
     ResizeObserverModule,
     FormsModule,
     MonacoEditorModule,
-    AgGridModule.withComponents([])
+    AgGridModule,
+    NzSelectModule
   ],
-  declarations: [WelcomeComponent, AgGridDemoComponent, ResizeDemoComponent, NavComponent, ButtonCellRendererComponent],
+  declarations: [WelcomeComponent, CustomHeaderComponent, AgGridDemoComponent, ResizeDemoComponent, NavComponent, ButtonCellRendererComponent],
   exports: [WelcomeComponent],
 })
 export class WelcomeModule {}

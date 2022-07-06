@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ColDef} from 'ag-grid-community';
 import {ButtonCellRendererComponent} from '../button-cell-renderer/button-cell-renderer.component';
+import {CustomHeaderComponent} from '../custom-header/custom-header.component';
 
 @Component({
   selector: 'app-ag-grid-demo',
@@ -10,7 +11,7 @@ import {ButtonCellRendererComponent} from '../button-cell-renderer/button-cell-r
 export class AgGridDemoComponent implements OnInit {
   sideBar = 'filters';
   columnDefs: ColDef[] = [
-    {field: 'id', headerName: 'ID' },
+    {field: 'id', headerComponent: CustomHeaderComponent },
     {field: 'make' , resizable: true, editable: true},
     { field: 'model', resizable: true, editable: true},
     { field: 'price'},
@@ -30,6 +31,9 @@ export class AgGridDemoComponent implements OnInit {
     minWidth: 100,
     filter: false,
     resizable: false,
+    headerComponentParams: {
+      menuIcon: 'fa-bars',
+    },
   };
   rowData: { id?: number, make: string, model: string, price: number}[] = [
     { make: 'Toyota', model: 'Celica', price: 35000 },

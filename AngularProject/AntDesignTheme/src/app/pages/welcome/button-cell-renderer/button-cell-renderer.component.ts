@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AgRendererComponent} from 'ag-grid-angular';
 import {IAfterGuiAttachedParams, ICellRendererParams} from 'ag-grid-community';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import {AgRendererComponent} from 'ag-grid-angular-legacy';
 
 @Component({
   selector: 'app-button-cell-renderer',
