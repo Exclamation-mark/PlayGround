@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ColDef} from 'ag-grid-community';
 import {ButtonCellRendererComponent} from '../button-cell-renderer/button-cell-renderer.component';
 import {CustomHeaderComponent} from '../custom-header/custom-header.component';
+import {NzMessageService} from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-ag-grid-demo',
@@ -185,7 +186,7 @@ export class AgGridDemoComponent implements OnInit {
     { make: 'Ford', model: 'Mondeo', price: 32000 },
     { make: 'Porsche', model: 'Boxter', price: 72000 }
   ];
-  constructor() { }
+  constructor(private message: NzMessageService) { }
 
   ngOnInit(): void {
     this.rowData.forEach((value, index) => {
@@ -193,4 +194,8 @@ export class AgGridDemoComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
+  showData() {
+    this.message.success('see ' + JSON.stringify(this.rowData[0]));
+  }
 }
