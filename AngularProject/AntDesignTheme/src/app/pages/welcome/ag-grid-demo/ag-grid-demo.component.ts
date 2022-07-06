@@ -12,13 +12,20 @@ export class AgGridDemoComponent implements OnInit {
   sideBar = 'filters';
   columnDefs: ColDef[] = [
     {field: 'id', headerComponent: CustomHeaderComponent },
-    {field: 'make' , resizable: true, editable: true},
-    { field: 'model', resizable: true, editable: true},
-    { field: 'price'},
+    {field: 'make' , resizable: true, editable: true,
+      cellStyle: {'border-left': '2px solid orange'}
+    },
+    { field: 'model', resizable: true, editable: true,
+      cellStyle: {'border-left': '2px solid orange'}
+    },
+    { field: 'price',
+      cellStyle: {'border-left': '2px solid orange'}
+    },
     {
       field: '操作',
       minWidth: 300,
       cellRenderer: 'customRenderer',
+      cellStyle: {'border-left': '2px solid orange'}
     }
   ];
   frameworkComponents = {
