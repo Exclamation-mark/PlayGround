@@ -11,6 +11,7 @@ export class SplitComponent implements OnInit {
   version: string = 'asxsasds';
   subject = new Subject<ResizeObserverEntry[]>();
   maxWidth = 500;
+  flexWidth = 500;
   maxHeight = 500;
   width = 500;
   rightWidth = document.body.offsetWidth - 500;
@@ -30,6 +31,7 @@ export class SplitComponent implements OnInit {
       this.width = e[0].contentRect.width;
       this.height = e[0].contentRect.height;
       this.maxWidth = e[0].contentRect.width - 32;
+      this.flexWidth = this.maxWidth;
       this.maxHeight = e[0].contentRect.height - 150;
       this.rightWidth = document.body.offsetWidth - this.width;
     });
@@ -37,6 +39,22 @@ export class SplitComponent implements OnInit {
 
   sendData(e: ResizeObserverEntry[]) {
     this.subject.next(e);
+  }
+
+  onResizeRight(data: any) {
+    console.log('zzq see output', data);
+    this.flexWidth = this.maxWidth - 240;
+  }
+
+  onClosePanel(data: any) {
+    console.log('zzq see output close', data, this.maxWidth);
+    if (this.flexWidth === this.maxWidth) {
+      console.log('zzq see now is equal');
+      this.flexWidth = this.maxWidth - 1;
+    }else {
+      console.log('zzq see not equal');
+      this.flexWidth = this.maxWidth;
+    }
   }
 
 }
