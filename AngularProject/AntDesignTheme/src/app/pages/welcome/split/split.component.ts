@@ -29,7 +29,7 @@ export class SplitComponent implements OnInit {
       console.log('zzq see height', e[0].contentRect.height);
       this.width = e[0].contentRect.width;
       this.height = e[0].contentRect.height;
-      this.maxWidth = e[0].contentRect.width - 100;
+      this.maxWidth = e[0].contentRect.width - 32;
       this.maxHeight = e[0].contentRect.height - 150;
       this.rightWidth = document.body.offsetWidth - this.width;
     });

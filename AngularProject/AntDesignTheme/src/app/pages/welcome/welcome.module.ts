@@ -24,6 +24,8 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import {CustomHeaderComponent} from './custom-header/custom-header.component';
 import {NzSelectModule} from 'ng-zorro-antd/select';
 import { SplitComponent } from './split/split.component';
+import { RightPannelComponent } from './layout-component/right-pannel/right-pannel.component';
+import {NzToolTipModule} from 'ng-zorro-antd/tooltip';
 @NgModule({
   imports: [
     WelcomeRoutingModule,
@@ -41,7 +43,8 @@ import { SplitComponent } from './split/split.component';
     FormsModule,
     MonacoEditorModule,
     AgGridModule,
-    NzSelectModule
+    NzSelectModule,
+    NzToolTipModule
   ],
   declarations: [
     WelcomeComponent,
@@ -50,7 +53,8 @@ import { SplitComponent } from './split/split.component';
     ResizeDemoComponent,
     NavComponent,
     ButtonCellRendererComponent,
-    SplitComponent
+    SplitComponent,
+    RightPannelComponent
   ],
   exports: [WelcomeComponent],
 })
