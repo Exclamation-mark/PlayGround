@@ -23,6 +23,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import {CustomHeaderComponent} from './custom-header/custom-header.component';
 import {NzSelectModule} from 'ng-zorro-antd/select';
+import { SplitComponent } from './split/split.component';
 @NgModule({
   imports: [
     WelcomeRoutingModule,
@@ -42,7 +43,15 @@ import {NzSelectModule} from 'ng-zorro-antd/select';
     AgGridModule,
     NzSelectModule
   ],
-  declarations: [WelcomeComponent, CustomHeaderComponent, AgGridDemoComponent, ResizeDemoComponent, NavComponent, ButtonCellRendererComponent],
+  declarations: [
+    WelcomeComponent,
+    CustomHeaderComponent,
+    AgGridDemoComponent,
+    ResizeDemoComponent,
+    NavComponent,
+    ButtonCellRendererComponent,
+    SplitComponent
+  ],
   exports: [WelcomeComponent],
 })
 export class WelcomeModule {}
