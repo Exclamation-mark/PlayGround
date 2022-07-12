@@ -16,8 +16,11 @@
     </div>
     <div style="flex: 1;height: 100%">
       <div style="height: 44px">
+<!--        <input style="width: 100%;height: 40px;padding: 0px;border-left-width: 0px;border-right-width: 0px"/>-->
         <div *ngIf="showBtn" style="float:right">
-          <button nz-button nzType="primary" (click)="onClose()" [nzSize]="'small'"><i nz-icon nzType="close"></i></button>
+          <button nz-button nzType="primary" (click)="onClose()" [nzSize]="'small'">
+            <i nz-icon nzType="close"></i>
+          </button>
         </div>
       </div>
       <div style="width: 100%;height: calc(100% - 44px)">
