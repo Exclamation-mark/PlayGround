@@ -1,10 +1,18 @@
 <div style="width: 100%;height: 100%" (waResizeObserver) ="windowSize($event)">
   <div style="display: flex;height: 100%">
     <div style="width: 32px;height: 100%">
-      <button nz-button nzType="primary" (click)="onSow()" [nzSize]="'mini'"><i nz-icon nzType="download"></i></button>
-      <button nz-button nzType="primary" (click)="onSow()" [nzSize]="'mini'"><i nz-icon nzType="arrow-up" nzTheme="outline"></i></button>
-      <button nz-button nzType="primary" (click)="onSow()" [nzSize]="'mini'"><i nz-icon nzType="fullscreen-exit" nzTheme="outline"></i></button>
-      <button nz-button nzType="primary" (click)="onSow()" [nzSize]="'mini'"><i nz-icon nzType="plus-circle" nzTheme="outline"></i></button>
+      <button nz-button nzType="primary" (click)="onSow()">
+        <i nz-icon nzType="download"></i>
+      </button>
+      <button nz-button nzType="primary" (click)="onSow()">
+        <i nz-icon nzType="arrow-up" nzTheme="outline"></i>
+      </button>
+      <button nz-button nzType="primary" (click)="onSow()">
+        <i nz-icon nzType="fullscreen-exit" nzTheme="outline"></i>
+      </button>
+      <button nz-button nzType="primary" (click)="onSow()">
+        <i nz-icon nzType="plus-circle" nzTheme="outline"></i>
+      </button>
     </div>
     <div style="flex: 1;height: 100%">
       <div style="height: 44px">
