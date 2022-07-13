@@ -1,3 +1,7 @@
 <perfect-scrollbar style="width: 400px; max-height: 600px">
-  <tree-root [nodes]="nodes"></tree-root>
+  <tree-root
+    [nodes]="nodes"
+    (deactivate)="onEvent($event)"
+    (activate)="onEvent($event)"
+  ></tree-root>
 </perfect-scrollbar>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NzMessageService} from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-tree',
@@ -40,9 +41,14 @@ export class TreeComponent implements OnInit {
     { name: 'root4', children: [] },
     { name: 'root5', children: null }
   ];
-  constructor() { }
+  constructor(private message: NzMessageService) { }
 
   ngOnInit(): void {
   }
 
+  onEvent(event: any) {
+    this.message.success('on event');
+    event.node.toggleExpanded();
+    console.log('zzq see event', event);
+  }
 }
