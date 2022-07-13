@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
   tabs = ['Tab 1', 'Tab 2'];
   selectedIndex = 0;
+  isIn = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -22,4 +23,11 @@ export class NavComponent implements OnInit {
     this.selectedIndex = this.tabs.length;
   }
 
+  mouseComeIn($event: MouseEvent) {
+    this.isIn = true;
+  }
+
+  mouseComeOut($event: MouseEvent) {
+    this.isIn = false;
+  }
 }

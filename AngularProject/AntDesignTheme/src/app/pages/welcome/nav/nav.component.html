@@ -12,3 +12,14 @@
 <perfect-scrollbar style="max-width: 600px; max-height: 400px;">
   <div style="height: 600px;background-color: pink;">Scrollable content {{tabs[selectedIndex]}}</div>
 </perfect-scrollbar>
+
+<div style="width: 200px;height: 100px">
+  <div
+    style="background-color: green;width: 150px;height: 100px;display: inline-block"
+    (mouseover)="mouseComeIn($event)"
+    (mouseout)="mouseComeOut($event)"
+  ></div>
+  <div style="border-color: pink;border-width: 2px;width: 50px;height: 100px;display: inline-block">
+    <p *ngIf="isIn">Ha Ha</p>
+  </div>
+</div>
