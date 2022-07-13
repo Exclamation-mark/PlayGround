@@ -7,6 +7,6 @@
   <nz-tab *ngFor="let tab of tabs" nzClosable [nzTitle]="tab"></nz-tab>
 </nz-tabset>
 
-<div style="background-color: pink;width: 100%;height: 300px;text-align: center">
-  {{tabs[selectedIndex]}}
-</div>
+<perfect-scrollbar style="max-width: 600px; max-height: 400px;">
+  <div style="height: 600px;background-color: pink">Scrollable content {{tabs[selectedIndex]}}</div>
+</perfect-scrollbar>

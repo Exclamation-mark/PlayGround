@@ -26,7 +26,15 @@ import {NzSelectModule} from 'ng-zorro-antd/select';
 import { SplitComponent } from './split/split.component';
 import { RightPannelComponent } from './layout-component/right-pannel/right-pannel.component';
 import {NzToolTipModule} from 'ng-zorro-antd/tooltip';
-import { VerticalSplitComponent } from './vertical-split/vertical-split.component';
+import {VerticalSplitComponent} from './vertical-split/vertical-split.component';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
+
 @NgModule({
   imports: [
     WelcomeRoutingModule,
@@ -45,6 +53,7 @@ import { VerticalSplitComponent } from './vertical-split/vertical-split.componen
     MonacoEditorModule,
     AgGridModule,
     NzSelectModule,
+    PerfectScrollbarModule,
     NzToolTipModule
   ],
   declarations: [
@@ -57,6 +66,12 @@ import { VerticalSplitComponent } from './vertical-split/vertical-split.componen
     SplitComponent,
     RightPannelComponent,
     VerticalSplitComponent
+  ],
+  providers: [
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
   ],
   exports: [WelcomeComponent],
 })

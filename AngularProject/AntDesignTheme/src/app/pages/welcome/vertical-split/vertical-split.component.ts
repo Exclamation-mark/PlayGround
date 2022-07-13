@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 import {ColDef} from 'ag-grid-community';
 import {CustomHeaderComponent} from '../custom-header/custom-header.component';
 import {ButtonCellRendererComponent} from '../button-cell-renderer/button-cell-renderer.component';
 import {NzMessageService} from 'ng-zorro-antd/message';
+import PerfectScrollbar from 'perfect-scrollbar';
 
 @Component({
   selector: 'app-vertical-split',
@@ -90,7 +91,45 @@ export class VerticalSplitComponent implements OnInit {
     { make: 'Toyota', model: 'Celica', price: 35000 },
     { make: 'Ford', model: 'Mondeo', price: 32000 }
   ];
-  constructor(private message: NzMessageService) { }
+
+  constructor(private message: NzMessageService
+    , private elementRef: ElementRef) {
+  }
+
+  // tslint:disable-next-line:typedef
+  onFirstGridReady(params: any, gridContainer: HTMLElement) {
+    this.message.warning('onFirstGridReady');
+    const array = ['.ag-body-viewport', ' .ag-body-horizontal-scroll-viewport'];
+    array.forEach(element => {
+      const container = gridContainer.querySelector(element);
+      if (container) {
+        this.message.warning('container set');
+        const ps = new PerfectScrollbar(container);
+        ps.update();
+      }else {
+        this.message.warning('container not set');
+      }
+    });
+  }
+
+  // tslint:disable-next-line:typedef
+  onSecondGridReady(params: any) {
+    this.message.warning('onSecondGridReady');
+    const agBodyViewport: HTMLElement = this.elementRef.nativeElement.querySelector('#secondGrid .ag-body-viewport');
+    const agBodyHorizontalViewport: HTMLElement = this.elementRef.nativeElement.querySelector('#secondGrid .ag-body-horizontal-scroll-viewport');
+    if (agBodyViewport) {
+      const ps = new PerfectScrollbar(agBodyViewport);
+      ps.update();
+    }else {
+      this.message.warning('have no viewport1');
+    }
+    if (agBodyHorizontalViewport) {
+      const ps = new PerfectScrollbar(agBodyHorizontalViewport);
+      ps.update();
+    }else {
+      this.message.warning('have no viewport2');
+    }
+  }
 
   ngOnInit(): void {
     this.rowData.forEach((value, index) => {

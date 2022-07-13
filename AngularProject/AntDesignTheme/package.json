@@ -29,6 +29,7 @@
     "monaco-editor": "^0.30.1",
     "ng-resize-observer": "^1.0.2",
     "ng-zorro-antd": "^11.0.0",
+    "ngx-perfect-scrollbar": "^10.1.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

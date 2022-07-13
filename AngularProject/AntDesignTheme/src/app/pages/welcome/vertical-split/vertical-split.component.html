@@ -2,13 +2,15 @@
      waResizeBox="border-box" (waResizeObserver) ="sendData($event) ">
   <div class="content"style="height: 100%" >
     <rsz-layout class="cell" [directions]="['bottom']" #top [rFlex]="true" [style]="{maxHeight: maxHeight + 'px'}">
-      <div style="width: 100%;height: 100%;padding: 10px;">
+      <div style="width: 100%;height: 100%;padding: 10px;" #gridContainer>
         <ag-grid-angular
           style="width: 100%; height: 100%;"
           class="ag-theme-alpine"
+          id="firstGrid"
+          (gridReady)="onFirstGridReady($event,gridContainer)"
           [undoRedoCellEditing]="true"
           [undoRedoCellEditingLimit]="20"
-          [pagination]="true"
+          [pagination]="false"
           [rowData]="rowData1"
           [frameworkComponents]="frameworkComponents"
           [defaultColDef]="defaultColDef"
@@ -24,11 +26,13 @@
           class="ag-theme-alpine"
           [undoRedoCellEditing]="true"
           [undoRedoCellEditingLimit]="20"
+          id="secondGrid"
           [pagination]="true"
           [rowData]="rowData"
           [frameworkComponents]="frameworkComponents"
           [defaultColDef]="defaultColDef"
           [columnDefs]="columnDefs"
+          (gridReady)="onSecondGridReady($event)"
         >
         </ag-grid-angular>
       </div>
