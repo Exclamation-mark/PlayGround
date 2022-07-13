@@ -1,0 +1,37 @@
+<div style="height: 100%;overflow-y:auto;width: 100%;"
+     waResizeBox="border-box" (waResizeObserver) ="sendData($event) ">
+  <div class="content"style="height: 100%" >
+    <rsz-layout class="cell" [directions]="['bottom']" #top [rFlex]="true" [style]="{maxHeight: maxHeight + 'px'}">
+      <div style="width: 100%;height: 100%;padding: 10px;">
+        <ag-grid-angular
+          style="width: 100%; height: 100%;"
+          class="ag-theme-alpine"
+          [undoRedoCellEditing]="true"
+          [undoRedoCellEditingLimit]="20"
+          [pagination]="true"
+          [rowData]="rowData1"
+          [frameworkComponents]="frameworkComponents"
+          [defaultColDef]="defaultColDef"
+          [columnDefs]="columnDefs"
+        >
+        </ag-grid-angular>
+      </div>
+    </rsz-layout>
+    <rsz-layout class="cell"  [directions]="['none']" [rFlex]="false" >
+      <div style="width: 100%;height: 100%;padding: 10px;">
+        <ag-grid-angular
+          style="width: 100%; height: 100%;"
+          class="ag-theme-alpine"
+          [undoRedoCellEditing]="true"
+          [undoRedoCellEditingLimit]="20"
+          [pagination]="true"
+          [rowData]="rowData"
+          [frameworkComponents]="frameworkComponents"
+          [defaultColDef]="defaultColDef"
+          [columnDefs]="columnDefs"
+        >
+        </ag-grid-angular>
+      </div>
+    </rsz-layout>
+  </div>
+</div>

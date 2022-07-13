@@ -26,6 +26,7 @@ import {NzSelectModule} from 'ng-zorro-antd/select';
 import { SplitComponent } from './split/split.component';
 import { RightPannelComponent } from './layout-component/right-pannel/right-pannel.component';
 import {NzToolTipModule} from 'ng-zorro-antd/tooltip';
+import { VerticalSplitComponent } from './vertical-split/vertical-split.component';
 @NgModule({
   imports: [
     WelcomeRoutingModule,
@@ -54,7 +55,8 @@ import {NzToolTipModule} from 'ng-zorro-antd/tooltip';
     NavComponent,
     ButtonCellRendererComponent,
     SplitComponent,
-    RightPannelComponent
+    RightPannelComponent,
+    VerticalSplitComponent
   ],
   exports: [WelcomeComponent],
 })
