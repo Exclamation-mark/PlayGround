@@ -15,7 +15,13 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { AppInitializerProvider } from './app-initializer.service';
 import {WelcomeModule} from './pages/welcome/welcome.module';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
 registerLocaleData(zh);
 
 @NgModule({
@@ -29,9 +35,13 @@ registerLocaleData(zh);
     WelcomeModule,
     FormsModule,
     HttpClientModule,
+    PerfectScrollbarModule,
     BrowserAnimationsModule,
   ],
-  providers: [AppInitializerProvider, { provide: NZ_I18N, useValue: zh_CN }],
+  providers: [AppInitializerProvider, {provide: NZ_I18N, useValue: zh_CN}, {
+    provide: PERFECT_SCROLLBAR_CONFIG,
+    useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

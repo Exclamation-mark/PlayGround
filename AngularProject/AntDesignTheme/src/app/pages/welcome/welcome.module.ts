@@ -27,16 +27,11 @@ import { SplitComponent } from './split/split.component';
 import { RightPannelComponent } from './layout-component/right-pannel/right-pannel.component';
 import {NzToolTipModule} from 'ng-zorro-antd/tooltip';
 import {VerticalSplitComponent} from './layout-component/vertical-split/vertical-split.component';
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
-import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import {AngularSplitModule} from 'angular-split';
 import { SplitV2Component } from './split-v2/split-v2.component';
 import { VerticalSplitV2Component } from './layout-component/vertical-split-v2/vertical-split-v2.component';
+import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
-};
 
 @NgModule({
   imports: [
@@ -57,8 +52,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MonacoEditorModule,
     AgGridModule,
     NzSelectModule,
-    PerfectScrollbarModule,
-    NzToolTipModule
+    NzToolTipModule,
+    PerfectScrollbarModule
   ],
   declarations: [
     WelcomeComponent,
@@ -73,12 +68,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SplitV2Component,
     VerticalSplitV2Component
   ],
-  providers: [
-    {
-      provide: PERFECT_SCROLLBAR_CONFIG,
-      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-    }
-  ],
+  providers: [],
   exports: [WelcomeComponent],
 })
 export class WelcomeModule {}
