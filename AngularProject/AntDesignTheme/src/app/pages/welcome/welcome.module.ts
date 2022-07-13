@@ -31,6 +31,8 @@ import {AngularSplitModule} from 'angular-split';
 import { SplitV2Component } from './split-v2/split-v2.component';
 import { VerticalSplitV2Component } from './layout-component/vertical-split-v2/vertical-split-v2.component';
 import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
+import { TreeComponent } from './tree/tree.component';
+import {TreeModule} from '@circlon/angular-tree-component';
 
 
 @NgModule({
@@ -53,6 +55,7 @@ import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
     AgGridModule,
     NzSelectModule,
     NzToolTipModule,
+    TreeModule,
     PerfectScrollbarModule
   ],
   declarations: [
@@ -66,7 +69,8 @@ import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
     RightPannelComponent,
     VerticalSplitComponent,
     SplitV2Component,
-    VerticalSplitV2Component
+    VerticalSplitV2Component,
+    TreeComponent
   ],
   providers: [],
   exports: [WelcomeComponent],
