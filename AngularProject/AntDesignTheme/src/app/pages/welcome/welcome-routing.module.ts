@@ -5,12 +5,14 @@ import {AgGridDemoComponent} from './ag-grid-demo/ag-grid-demo.component';
 import {ResizeDemoComponent} from './resize-demo/resize-demo.component';
 import {NavComponent} from './nav/nav.component';
 import {SplitComponent} from './split/split.component';
+import {SplitV2Component} from './split-v2/split-v2.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'agGrid', component: AgGridDemoComponent },
   { path: 'nav', component: NavComponent },
   { path: 'split', component: SplitComponent },
+  { path: 'split-v2', component: SplitV2Component },
   { path: 'reSize', component: ResizeDemoComponent }
 ];
 

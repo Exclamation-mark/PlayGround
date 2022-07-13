@@ -1,0 +1,20 @@
+<div style="height: 100%;width: 100%;">
+  <as-split
+    direction="horizontal" [unit]="'pixel'"
+    (dragEnd)="onRightDragEnd($event)"
+  >
+    <as-split-area>
+      <app-vertical-split-v2></app-vertical-split-v2>
+    </as-split-area>
+    <as-split-area
+      [size]="defaultRightSize"
+      [minSize]="60"
+      [maxSize]="500"
+    >
+      <app-right-pannel
+        (showC)="onResizeRight($event)"
+        (closeC)="onClosePanel($event)"
+      ></app-right-pannel>
+    </as-split-area>
+  </as-split>
+</div>

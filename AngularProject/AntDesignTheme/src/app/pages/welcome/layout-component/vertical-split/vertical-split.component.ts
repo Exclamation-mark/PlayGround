@@ -2,8 +2,8 @@ import {Component, ElementRef, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 import {ColDef} from 'ag-grid-community';
-import {CustomHeaderComponent} from '../custom-header/custom-header.component';
-import {ButtonCellRendererComponent} from '../button-cell-renderer/button-cell-renderer.component';
+import {CustomHeaderComponent} from '../../custom-header/custom-header.component';
+import {ButtonCellRendererComponent} from '../../button-cell-renderer/button-cell-renderer.component';
 import {NzMessageService} from 'ng-zorro-antd/message';
 import PerfectScrollbar from 'perfect-scrollbar';
 

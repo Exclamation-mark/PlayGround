@@ -1,0 +1,46 @@
+<div style="height: 100%;width: 100%;">
+  <as-split
+    direction="vertical"
+  >
+    <as-split-area
+      [size]="50"
+      [minSize]="25"
+    >
+      <div style="width: 100%;height: 100%;padding: 10px;" #gridContainer>
+        <ag-grid-angular
+          style="width: 100%; height: 100%;"
+          class="ag-theme-alpine"
+          id="firstGrid"
+          (gridReady)="onFirstGridReady($event,gridContainer)"
+          [undoRedoCellEditing]="true"
+          [undoRedoCellEditingLimit]="20"
+          [pagination]="false"
+          [rowData]="rowData1"
+          [frameworkComponents]="frameworkComponents"
+          [defaultColDef]="defaultColDef"
+          [columnDefs]="columnDefs"
+        >
+        </ag-grid-angular>
+      </div>
+    </as-split-area>
+    <as-split-area
+      [size]="50"
+      [minSize]="25"
+    >
+      <ag-grid-angular
+        style="width: 100%; height: 100%;"
+        class="ag-theme-alpine"
+        [undoRedoCellEditing]="true"
+        [undoRedoCellEditingLimit]="20"
+        id="secondGrid"
+        [pagination]="true"
+        [rowData]="rowData"
+        [frameworkComponents]="frameworkComponents"
+        [defaultColDef]="defaultColDef"
+        [columnDefs]="columnDefs"
+        (gridReady)="onSecondGridReady($event)"
+      >
+      </ag-grid-angular>
+    </as-split-area>
+  </as-split>
+</div>

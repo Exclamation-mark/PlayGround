@@ -31,7 +31,6 @@ export class RightPannelComponent implements OnInit {
           return;
         }
         this.width = e[0].contentRect.width;
-        console.log('zzq see pannel width', this.width);
         if (this.width <= 70) {
           this.showBtn = false;
         }else {
