@@ -13,13 +13,22 @@
   <div style="height: 600px;background-color: pink;">Scrollable content {{tabs[selectedIndex]}}</div>
 </perfect-scrollbar>
 
-<div style="width: 200px;height: 100px">
+<div
+  style="width: 400px;height: 100px;display:flex"
+  (mouseover)="mouseComeIn($event)"
+  (mouseleave)="mouseComeOut($event)"
+>
   <div
-    style="background-color: green;width: 150px;height: 100px;display: inline-block"
-    (mouseover)="mouseComeIn($event)"
-    (mouseout)="mouseComeOut($event)"
-  ></div>
-  <div style="border-color: pink;border-width: 2px;width: 50px;height: 100px;display: inline-block">
-    <p *ngIf="isIn">Ha Ha</p>
+    style="background-color: green;width: 200px;height: 100px;flex: 1"
+  >
+  </div>
+  <div style="border-color: pink;border-width: 2px;border-style: solid;width: 200px;height: 100px;flex: 1">
+    <div *ngIf="isIn"  style="width: 100%;height: 100%">
+      <button style="margin: 3px" nzSize="small" nz-button nzType="primary" (click)="showMsg()">message</button>
+      <p >Ha Ha</p>
+    </div>
   </div>
 </div>
+
+<button style="margin: 3px" nzSize="small" nz-button nzType="primary" (click)="addParameter()">Add Query Parameter</button>
+

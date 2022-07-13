@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {NzMessageService} from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-nav',
@@ -9,9 +11,17 @@ export class NavComponent implements OnInit {
   tabs = ['Tab 1', 'Tab 2'];
   selectedIndex = 0;
   isIn = false;
-  constructor() { }
+  id = 0;
+
+  constructor(
+    private router: Router,
+    private message: NzMessageService,
+    private route: ActivatedRoute
+  ) {
+  }
 
   ngOnInit(): void {
+    this.message.success('ngOnInit');
   }
 
   closeTab({ index }: { index: number }): void {
@@ -29,5 +39,18 @@ export class NavComponent implements OnInit {
 
   mouseComeOut($event: MouseEvent) {
     this.isIn = false;
+  }
+
+  showMsg() {
+    this.message.success('hahaha');
+  }
+
+  addParameter() {
+    this.id++;
+    this.router.navigate(['.'], {
+      relativeTo: this.route, queryParams: {
+        id: this.id,
+      }
+    });
   }
 }
