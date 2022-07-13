@@ -46,6 +46,7 @@ export class NavComponent implements OnInit {
   }
 
   addParameter() {
+    this.message.success(window.location.href);
     this.id++;
     this.router.navigate(['.'], {
       relativeTo: this.route, queryParams: {
