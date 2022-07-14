@@ -1,7 +1,56 @@
-<perfect-scrollbar style="width: 400px; max-height: 600px">
-  <tree-root
-    [nodes]="nodes"
-    (deactivate)="onEvent($event)"
-    (activate)="onEvent($event)"
-  ></tree-root>
-</perfect-scrollbar>
+<div class="container-f">
+  <div class="input-container">
+    <input nz-input placeholder="Basic usage" [(ngModel)]="searchText" (ngModelChange)="onFilter($event)" class="input"/>
+    <button nz-button nzType="dashed" style="display: inline">
+      <i nz-icon nzType="dash" nzTheme="outline"></i>
+    </button>
+  </div>
+  <perfect-scrollbar class="container">
+    <div>
+      <tree-root
+        #tree
+        [nodes]="nodes"
+        (select)="onEvent($event)"
+        (deselect)="onEvent($event)"
+      >
+        <ng-template #treeNodeWrapperTemplate let-node let-index="index">
+          <div
+            class="node-wrapper cuswid"
+            [class.zzq_selected]="node.isFocused"
+            (mouseover)="mouseComeIn(node)"
+            (mouseleave)="mouseComeOut(node)"
+          >
+            <app-tree-expander [node]="node"></app-tree-expander>
+            <div
+              class="zzq_d"
+              (click)="node.mouseAction('click', $event);tryExpand(node)"
+              (dblclick)="node.mouseAction('dblClick', $event);tryCloseExpand(node)"
+              (contextmenu)="node.mouseAction('contextMenu', $event)"
+              (treeDrop)="node.onDrop($event)"
+              [treeAllowDrop]="node.allowDrop"
+              [treeDrag]="node"
+              [treeDragEnabled]="node.allowDrag()">
+              <tree-node-content [template]="conc" [index]="index">
+              </tree-node-content>
+            </div>
+          </div>
+          <ng-template #conc>
+            <div style="display:flex">
+              <div
+                style="height: 100%;flex: 1"
+                class="menu_ellipsis"
+              >
+                <span>{{ node.displayField }}</span>
+              </div>
+              <div style="height: 100%">
+                <div *ngIf="node.data.isIn"  style="width: 100%;height: 100%">
+                  <button style="margin: 3px" nzSize="small" nz-button nzType="primary" (click)="$event.cancelBubble = true;showMsg(node.displayField)">message</button>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ng-template>
+      </tree-root>
+    </div>
+  </perfect-scrollbar>
+</div>

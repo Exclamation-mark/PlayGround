@@ -1,0 +1,10 @@
+<ng-container *treeMobxAutorun="{ dontDetach: true }">
+      <span
+        *ngIf="node.hasChildren"
+        class="icon-container"
+        (click)="node.mouseAction('expanderClick', $event)"
+      >
+        <i *ngIf="node.isCollapsed" nz-icon nzType="right" nzTheme="outline"></i>
+        <i *ngIf="node.isExpanded" nz-icon nzType="down" nzTheme="outline"></i>
+      </span>
+</ng-container>

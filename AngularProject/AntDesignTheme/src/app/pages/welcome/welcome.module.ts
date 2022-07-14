@@ -33,31 +33,35 @@ import { VerticalSplitV2Component } from './layout-component/vertical-split-v2/v
 import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import { TreeComponent } from './tree/tree.component';
 import {TreeModule} from '@circlon/angular-tree-component';
+import {NzInputModule} from 'ng-zorro-antd/input';
+import { TreeExpanderComponent } from './layout-component/tree-expander/tree-expander.component';
+import { TreeContentComponent } from './layout-component/tree-content/tree-content.component';
 
 
 @NgModule({
-  imports: [
-    WelcomeRoutingModule,
-    CommonModule,
-    NzTabsModule,
-    AngularSplitModule,
-    NzCollapseModule,
-    NzMessageModule,
-    NzButtonModule,
-    NzMenuModule,
-    NzIconModule,
-    NzDropDownModule,
-    NzRadioModule,
-    NgxResizableModule,
-    ResizeObserverModule,
-    FormsModule,
-    MonacoEditorModule,
-    AgGridModule,
-    NzSelectModule,
-    NzToolTipModule,
-    TreeModule,
-    PerfectScrollbarModule
-  ],
+    imports: [
+        WelcomeRoutingModule,
+        CommonModule,
+        NzTabsModule,
+        AngularSplitModule,
+        NzCollapseModule,
+        NzMessageModule,
+        NzButtonModule,
+        NzMenuModule,
+        NzIconModule,
+        NzDropDownModule,
+        NzRadioModule,
+        NgxResizableModule,
+        ResizeObserverModule,
+        FormsModule,
+        MonacoEditorModule,
+        AgGridModule,
+        NzSelectModule,
+        NzToolTipModule,
+        TreeModule,
+        PerfectScrollbarModule,
+        NzInputModule
+    ],
   declarations: [
     WelcomeComponent,
     CustomHeaderComponent,
@@ -70,7 +74,9 @@ import {TreeModule} from '@circlon/angular-tree-component';
     VerticalSplitComponent,
     SplitV2Component,
     VerticalSplitV2Component,
-    TreeComponent
+    TreeComponent,
+    TreeExpanderComponent,
+    TreeContentComponent
   ],
   providers: [],
   exports: [WelcomeComponent],
