@@ -36,32 +36,34 @@ import {TreeModule} from '@circlon/angular-tree-component';
 import {NzInputModule} from 'ng-zorro-antd/input';
 import { TreeExpanderComponent } from './layout-component/tree-expander/tree-expander.component';
 import { TreeContentComponent } from './layout-component/tree-content/tree-content.component';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 
 @NgModule({
-    imports: [
-        WelcomeRoutingModule,
-        CommonModule,
-        NzTabsModule,
-        AngularSplitModule,
-        NzCollapseModule,
-        NzMessageModule,
-        NzButtonModule,
-        NzMenuModule,
-        NzIconModule,
-        NzDropDownModule,
-        NzRadioModule,
-        NgxResizableModule,
-        ResizeObserverModule,
-        FormsModule,
-        MonacoEditorModule,
-        AgGridModule,
-        NzSelectModule,
-        NzToolTipModule,
-        TreeModule,
-        PerfectScrollbarModule,
-        NzInputModule
-    ],
+  imports: [
+    WelcomeRoutingModule,
+    CommonModule,
+    NzTabsModule,
+    AngularSplitModule,
+    NzCollapseModule,
+    NzMessageModule,
+    NzButtonModule,
+    NzMenuModule,
+    NzIconModule,
+    NzDropDownModule,
+    NzRadioModule,
+    NgxResizableModule,
+    ResizeObserverModule,
+    FormsModule,
+    MonacoEditorModule,
+    AgGridModule,
+    NzSelectModule,
+    NzToolTipModule,
+    TreeModule,
+    PerfectScrollbarModule,
+    NzInputModule,
+    NgxSpinnerModule
+  ],
   declarations: [
     WelcomeComponent,
     CustomHeaderComponent,

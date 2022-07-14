@@ -35,6 +35,7 @@ export class TreeComponent implements OnInit {
     { name: 'root4', children: [] }
   ];
   searchText = '';
+  isSpinnerShowing = false;
   constructor(
     private router: Router,
     private message: NzMessageService,
@@ -68,6 +69,16 @@ export class TreeComponent implements OnInit {
         console.log('do expand');
         node.toggleExpanded();
       }
+    }
+    if (this.isSpinnerShowing) {
+      setTimeout(() => {
+        this.isSpinnerShowing = false;
+      }, 3000);
+    }else {
+      this.isSpinnerShowing = true;
+      setTimeout(() => {
+        this.isSpinnerShowing = false;
+      }, 3000);
     }
     console.log('zzq see click try expand ', node);
   }

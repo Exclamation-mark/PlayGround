@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import {WelcomeModule} from './pages/welcome/welcome.module';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -35,9 +36,11 @@ registerLocaleData(zh);
     WelcomeModule,
     FormsModule,
     HttpClientModule,
+    NgxSpinnerModule,
     PerfectScrollbarModule,
     BrowserAnimationsModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [AppInitializerProvider, {provide: NZ_I18N, useValue: zh_CN}, {
     provide: PERFECT_SCROLLBAR_CONFIG,
     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
