@@ -24,7 +24,14 @@ export class EditorComponent implements OnInit {
           data: {
             url: 'https://cdn.pixabay.com/photo/2017/09/01/21/53/blue-2705642_1280.jpg'
           }
-        }
+        },
+        {
+          id: 'c2xeQuzaiJ',
+          type: 'paragraph',
+          data: {
+            text: 'asd'
+          }
+        },
       ],
       version: '2.11.10'
     }

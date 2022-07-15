@@ -23,6 +23,10 @@ export class CustomImage implements BlockTool {
     };
   }
 
+  destroy(): void {
+    console.log('zzq see des');
+  }
+
   render(): HTMLElement {
     this.wrapper = document.createElement('div');
     const input = document.createElement('input');
