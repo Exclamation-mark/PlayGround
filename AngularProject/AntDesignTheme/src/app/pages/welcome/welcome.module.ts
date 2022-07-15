@@ -37,6 +37,7 @@ import {NzInputModule} from 'ng-zorro-antd/input';
 import { TreeExpanderComponent } from './layout-component/tree-expander/tree-expander.component';
 import { TreeContentComponent } from './layout-component/tree-content/tree-content.component';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import { EditorComponent } from './editor/editor.component';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import {NgxSpinnerModule} from 'ngx-spinner';
     VerticalSplitV2Component,
     TreeComponent,
     TreeExpanderComponent,
-    TreeContentComponent
+    TreeContentComponent,
+    EditorComponent
   ],
   providers: [],
   exports: [WelcomeComponent],

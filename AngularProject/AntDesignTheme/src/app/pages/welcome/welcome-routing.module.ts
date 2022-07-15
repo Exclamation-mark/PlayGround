@@ -7,6 +7,7 @@ import {NavComponent} from './nav/nav.component';
 import {SplitComponent} from './split/split.component';
 import {SplitV2Component} from './split-v2/split-v2.component';
 import {TreeComponent} from './tree/tree.component';
+import {EditorComponent} from './editor/editor.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'nav', component: NavComponent },
   { path: 'split', component: SplitComponent },
   { path: 'tree', component: TreeComponent },
+  { path: 'editor', component: EditorComponent },
   { path: 'split-v2', component: SplitV2Component },
   { path: 'reSize', component: ResizeDemoComponent }
 ];
