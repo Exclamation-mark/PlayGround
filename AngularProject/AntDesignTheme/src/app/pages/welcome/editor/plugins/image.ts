@@ -68,6 +68,8 @@ export class CustomImage implements BlockTool {
 
   save(blockContent: HTMLElement): any {
     const input = blockContent.querySelector('input');
+    console.log('zzq see input', input);
+    console.log('zzq see input.value', input?.value);
     return {
       url: 'zzq'
     };
