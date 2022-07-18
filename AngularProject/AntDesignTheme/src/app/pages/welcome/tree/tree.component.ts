@@ -38,6 +38,7 @@ export class TreeComponent implements OnInit {
   ];
   searchText = '';
   isSpinnerShowing = false;
+  timer: number;
   constructor(
     private router: Router,
     private message: NzMessageService,
@@ -73,14 +74,17 @@ export class TreeComponent implements OnInit {
       }
     }
     if (this.isSpinnerShowing) {
-      setTimeout(() => {
+      if (this.timer) {
+        clearTimeout(this.timer);
+      }
+      this.timer = setTimeout(() => {
         this.isSpinnerShowing = false;
         this.progressComponent.complete();
       }, 3000);
     }else {
       this.isSpinnerShowing = true;
       this.progressComponent.start();
-      setTimeout(() => {
+      this.timer = setTimeout(() => {
         this.isSpinnerShowing = false;
         this.progressComponent.complete();
       }, 3000);
@@ -115,5 +119,14 @@ export class TreeComponent implements OnInit {
   }
 
   onCompleted(): void  {
+  }
+
+  cancel(): void {
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = 0;
+      this.isSpinnerShowing = false;
+      this.progressComponent.complete();
+    }
   }
 }
