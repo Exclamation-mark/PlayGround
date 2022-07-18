@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 import {TreeComponent as TreeEComponent} from '@circlon/angular-tree-component';
+import {NgProgressComponent} from 'ngx-progressbar';
 
 @Component({
   selector: 'app-tree',
@@ -14,6 +15,7 @@ import {TreeComponent as TreeEComponent} from '@circlon/angular-tree-component';
 export class TreeComponent implements OnInit {
   subject = new Subject<string>();
   @ViewChild('tree', {static: false}) tree: TreeEComponent;
+  @ViewChild('progressBar', {static: false}) progressComponent: NgProgressComponent;
   nodes = [
     {
       name: '海外仓账单',
@@ -51,13 +53,13 @@ export class TreeComponent implements OnInit {
     });
   }
 
-  onEvent(event: any) {
+  onEvent(event: any): void  {
     this.message.success('on event');
     // event.node.toggleExpanded();
     console.log('zzq see event', event);
   }
 
-  tryExpand(node: TreeNode) {
+  tryExpand(node: TreeNode): void  {
     this.message.info('click');
     this.router.navigate(['.'], {
       relativeTo: this.route, queryParams: {
@@ -73,36 +75,45 @@ export class TreeComponent implements OnInit {
     if (this.isSpinnerShowing) {
       setTimeout(() => {
         this.isSpinnerShowing = false;
+        this.progressComponent.complete();
       }, 3000);
     }else {
       this.isSpinnerShowing = true;
+      this.progressComponent.start();
       setTimeout(() => {
         this.isSpinnerShowing = false;
+        this.progressComponent.complete();
       }, 3000);
     }
     console.log('zzq see click try expand ', node);
   }
 
-  tryCloseExpand(node: TreeNode) {
+  tryCloseExpand(node: TreeNode): void  {
     if (node.isExpanded) {
       node.toggleExpanded();
     }
   }
 
-  mouseComeIn(node: TreeNode) {
+  mouseComeIn(node: TreeNode): void  {
     node.data.isIn = true;
   }
 
-  mouseComeOut(node: TreeNode) {
+  mouseComeOut(node: TreeNode): void  {
     node.data.isIn = false;
   }
 
-  showMsg(s: string) {
+  showMsg(s: string): void  {
     this.message.success('click: ' + s);
   }
 
-  onFilter(event: any) {
+  onFilter(event: any): void  {
     console.log('zzq see change', this.searchText, event);
     this.subject.next(event);
+  }
+
+  onStarted(): void {
+  }
+
+  onCompleted(): void  {
   }
 }

@@ -54,7 +54,11 @@
     </div>
   </perfect-scrollbar>
 </div>
-<div style="width: 300px;height: 300px;background-color: pink;position: absolute;top: 150px;right: 150px">
+
+<div style="width: 300px;max-width:300px;height: 300px;background-color: pink;position: absolute;top: 150px;right: 150px">
+  <div class="progressbar-container">
+    <ng-progress #progressBar (started)="onStarted()" (completed)="onCompleted()"></ng-progress>
+  </div>
   <ngx-spinner
     bdColor="rgba(51,51,51,0.3)"
     size="medium"
@@ -66,5 +70,6 @@
     <p style="font-size: 20px; color: white">
       Loading...
     </p>
+    <button nzSize="small" nz-button nzType="primary">Cancel</button>
   </ngx-spinner>
 </div>

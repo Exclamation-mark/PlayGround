@@ -38,6 +38,7 @@ import { TreeExpanderComponent } from './layout-component/tree-expander/tree-exp
 import { TreeContentComponent } from './layout-component/tree-content/tree-content.component';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import { EditorComponent } from './editor/editor.component';
+import {NgProgressModule} from 'ngx-progressbar';
 
 
 @NgModule({
@@ -63,7 +64,13 @@ import { EditorComponent } from './editor/editor.component';
     TreeModule,
     PerfectScrollbarModule,
     NzInputModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgProgressModule.withConfig({
+      fixed: false,
+      spinnerPosition: 'right',
+      ease: 'linear',
+      color: '#5c6bc0'
+    }),
   ],
   declarations: [
     WelcomeComponent,
