@@ -39,6 +39,7 @@ import { TreeContentComponent } from './layout-component/tree-content/tree-conte
 import {NgxSpinnerModule} from 'ngx-spinner';
 import { EditorComponent } from './editor/editor.component';
 import {NgProgressModule} from 'ngx-progressbar';
+import {PopoverModule} from 'ngx-smart-popover';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import {NgProgressModule} from 'ngx-progressbar';
       ease: 'linear',
       color: '#5c6bc0'
     }),
+    PopoverModule,
   ],
   declarations: [
     WelcomeComponent,
