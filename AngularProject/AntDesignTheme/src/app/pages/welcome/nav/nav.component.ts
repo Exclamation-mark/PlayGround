@@ -58,9 +58,7 @@ export class NavComponent implements OnInit {
   }
 
   onInputValueChange(data: any): void {
-    console.log('zzq see value', data);
     this.v = data.target.value;
-    console.log('zzq see value type', typeof this.v);
   }
 
   fileChanged(data: any): void {
@@ -69,13 +67,11 @@ export class NavComponent implements OnInit {
       console.log('file name:', data.target.files[0].name);
       this.v = data.target.value;
     }
-    console.log('see data', data);
   }
 
   changeType(data: any): void {
     if (data && !this.v) {
       this.v = 'select file';
     }
-    console.log('zzq see type changed', data, this.v);
   }
 }
