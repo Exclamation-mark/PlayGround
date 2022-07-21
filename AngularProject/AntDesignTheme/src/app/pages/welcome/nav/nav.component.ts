@@ -11,6 +11,8 @@ export class NavComponent implements OnInit {
   tabs = ['Tab 1', 'Tab 2'];
   selectedIndex = 0;
   isIn = false;
+  mode = false;
+  v: any;
   id = 0;
 
   constructor(
@@ -53,5 +55,27 @@ export class NavComponent implements OnInit {
         id: this.id,
       }
     });
+  }
+
+  onInputValueChange(data: any): void {
+    console.log('zzq see value', data);
+    this.v = data.target.value;
+    console.log('zzq see value type', typeof this.v);
+  }
+
+  fileChanged(data: any): void {
+    if (this.mode) {
+      console.log('file full path: ' + data.target.value);
+      console.log('file name:', data.target.files[0].name);
+      this.v = data.target.value;
+    }
+    console.log('see data', data);
+  }
+
+  changeType(data: any): void {
+    if (data && !this.v) {
+      this.v = 'select file';
+    }
+    console.log('zzq see type changed', data, this.v);
   }
 }

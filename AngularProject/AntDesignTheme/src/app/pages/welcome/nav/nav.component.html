@@ -10,7 +10,39 @@
 <span class="a">p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 </span>
 
 <perfect-scrollbar style="max-width: 600px; max-height: 400px;">
-  <div style="height: 600px;background-color: pink;">Scrollable content {{tabs[selectedIndex]}}</div>
+  <div style="height: 600px;background-color: pink;">
+    Scrollable content {{tabs[selectedIndex]}}
+
+    <nz-switch
+      [(ngModel)]="mode"
+      zCheckedChildren="文件"
+      nzUnCheckedChildren="文本"
+      (ngModelChange)="changeType($event)"
+    ></nz-switch>
+
+    <div class="inp-" style="background-color: white">
+      <label  for="inputTag">
+        <span class="text-shown" *ngIf="mode">
+            {{ v }}
+        </span>
+        <input
+          id="inputTag"
+          class="file-i"
+          *ngIf="mode"
+          placeholder="Upload an Image"
+          type="file"
+          (change)="fileChanged($event)"
+        />
+        <input
+          *ngIf="!mode"
+          placeholder="Upload an Image"
+          type="text"
+          [(ngModel)]="v"
+          (input)="onInputValueChange($event)"
+        />
+      </label>
+    </div>
+  </div>
 </perfect-scrollbar>
 
 <div

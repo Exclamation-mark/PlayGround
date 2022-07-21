@@ -40,6 +40,7 @@ import {NgxSpinnerModule} from 'ngx-spinner';
 import { EditorComponent } from './editor/editor.component';
 import {NgProgressModule} from 'ngx-progressbar';
 import {PopoverModule} from 'ngx-smart-popover';
+import {NzSwitchModule} from 'ng-zorro-antd/switch';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import {PopoverModule} from 'ngx-smart-popover';
       color: '#5c6bc0'
     }),
     PopoverModule,
+    NzSwitchModule,
   ],
   declarations: [
     WelcomeComponent,
