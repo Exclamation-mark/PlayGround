@@ -75,13 +75,17 @@
      [popoverDismissTimeout]="1000">
   element on which this popover is applied.
 </div>
-<popover-content #myPopover
-                 title="Popover title"
-                 placement="left"
-                 [animation]="true"
-                 [closeOnClickOutside]="true" >
-  <b>Very</b> <span style="color: #C21F39">Dynamic</span> <span style="color: #00b3ee">Reusable</span>
-  <b><i><span style="color: #ffc520">Popover With</span></i></b> <small>Html support</small>.
-</popover-content>
+
 
 <button [popover]="myPopover">element on which this popover is applied.</button>
+<popover-content #myPopover
+                 placement="left"
+                 [animation]="true"
+                 [closeOnMouseOutside]="false"
+                 [closeOnClickOutside]="true"
+>
+  <div style="background-color: grey;width: 500px;height: 500px">
+    <b>Very</b> <span style="color: #C21F39">Dynamic</span> <span style="color: #00b3ee">Reusable</span>
+    <b><i><span style="color: #ffc520">Popover With</span></i></b> <small>Html support</small>.
+  </div>
+</popover-content>
