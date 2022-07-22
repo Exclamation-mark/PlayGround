@@ -37,7 +37,7 @@ export class TreeComponent implements OnInit {
     { name: 'root4', children: [] }
   ];
   searchText = '';
-  isSpinnerShowing = false;
+  isSpinnerShowing = true;
   timer: number;
   constructor(
     private router: Router,
