@@ -113,14 +113,12 @@ export class NavComponent implements OnInit {
     h.append('Accept', 'application/json');
     const options = {headers: h};
     this.getFile().then(file => {
-      console.log('zzq see get file');
       if (file) {
         const formData = new FormData();
         formData.append('uploadFile', file.f, file.name);
         this.httpClient.post('http://localhost:8080/api/user', formData, options)
           .subscribe((res: any) => {
             this.message.success('upload result ' + res.data);
-            console.log('zzq see res', res?.data);
           });
       }
     });
@@ -132,9 +130,7 @@ export class NavComponent implements OnInit {
   private async getFile(): Promise<{ f: File; name: string; }> {
     // @ts-ignore
     const newVar = await db.todoLists.get(this.dbId);
-    console.log('zzq see get data', this.dbId);
     if (newVar?.data) {
-      console.log('zq see have file', newVar.data);
       // @ts-ignore
       const b = new Blob([newVar.data]);
       const file = new File([b], newVar.title, {type: 'data:application/octet-stream'});
