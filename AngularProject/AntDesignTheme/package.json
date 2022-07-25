@@ -29,6 +29,8 @@
     "ag-grid-angular-legacy": "^28.0.0",
     "ag-grid-community": "^28.0.0",
     "angular-split": "^13.2.0",
+    "dexie": "^3.2.2",
+    "dexie-observable": "^3.0.0-beta.11",
     "monaco-editor": "^0.30.1",
     "ng-resize-observer": "^1.0.2",
     "ng-zorro-antd": "^13.3.2",
