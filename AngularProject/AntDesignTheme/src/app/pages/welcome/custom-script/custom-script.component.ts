@@ -6,6 +6,15 @@ class Point {
   haveBeen: boolean;
   isWall: boolean;
 }
+class Robot{
+  direction = 0;
+
+  public face(direction: number): void {
+    if (Number.isInteger(direction)) {
+      this.direction = direction % 4;
+    }
+  }
+}
 
 @Component({
   selector: 'app-custom-script',
@@ -20,6 +29,7 @@ export class CustomScriptComponent implements OnInit {
   editorOptions = {theme: 'vs-light', language: 'javascript'};
   points: Point[][];
   holder = {};
+  robot = new Robot();
   interval: any;
   code = `
 const getDir = (robot, holder) => {
@@ -28,7 +38,9 @@ const getDir = (robot, holder) => {
     }
     holder.i++;
     console.log(' holder', holder)
-    return Math.ceil(Math.random()*4);
+    const newDirection = Math.random() * 4
+    robot.face(newDirection)
+    return Math.ceil(newDirection);
 }
   `;
 
@@ -36,6 +48,8 @@ const getDir = (robot, holder) => {
   }
 
   ngOnInit(): void {
+    this.robot.face(100);
+    console.log('zzq see ngOnInit direction', this.robot.direction);
     this.points = [];
     for (let i = 0; i < 10; i++) {
       const arr: Point[] = [];
@@ -51,6 +65,7 @@ const getDir = (robot, holder) => {
 
   onStart(): void {
     this.isRunning = true;
+    this.holder = {};
     this.x = 0;
     this.y = 0;
     this.interval = setInterval(() => {
@@ -76,7 +91,8 @@ const getDir = (robot, holder) => {
       clearInterval(this.interval);
     }
     const function1 = new Function(`${this.code};return getDir`)();
-    console.log('zzq see new direction ', function1({}, this.holder));
+    console.log('zzq see new direction ', function1(this.robot, this.holder));
+    console.log('zzq see direction', this.robot.direction);
     this.time++;
   }
 }
