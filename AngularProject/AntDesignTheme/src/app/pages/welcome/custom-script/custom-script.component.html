@@ -9,7 +9,22 @@
   </div>
   <div nz-row class="co">
     <div nz-col nzSpan="12">
-      <div class="content red">
+      <div class="content">
+        <div
+          class="robot-location"
+          [style.left]="x * 25"
+          [style.top]="y * 25"
+        ></div>
+        <div class="maze-container">
+          <div class="maze-line" *ngFor="let point of points">
+            <div
+              class="maze-cell"
+              [class.haveBenn]="p.haveBeen"
+              [class.isWall]="p.isWall && !p.haveBeen"
+              [class.passagegb]="!p.isWall"
+              *ngFor="let p of point"></div>
+          </div>
+        </div>
       </div>
     </div>
     <div nz-col nzSpan="12">

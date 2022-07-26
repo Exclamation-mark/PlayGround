@@ -13,6 +13,7 @@
 .content {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .green{
@@ -20,4 +21,40 @@
 }
 .red{
   background-color: red;
+}
+
+.maze-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.maze-line {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  flex-direction: col;
+}
+
+.maze-cell {
+  width: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: col;
+}
+.robot-location {
+  width: 25px;
+  height: 25px;
+  background-color: rgb(180, 180, 180);
+  position: absolute;
+}
+.haveBenn {
+  background-color: rgb(202, 202, 214);
+}
+.isWall {
+  background-color: rgb(100, 100, 100);
+}
+.passagegb {
+  background-color: rgb(245, 245, 245);
 }
