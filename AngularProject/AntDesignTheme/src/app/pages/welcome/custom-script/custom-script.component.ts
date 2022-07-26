@@ -19,9 +19,15 @@ export class CustomScriptComponent implements OnInit {
   isRunning = false;
   editorOptions = {theme: 'vs-light', language: 'javascript'};
   points: Point[][];
+  holder = {};
   interval: any;
   code = `
 const getDir = (robot, holder) => {
+    if(!holder.i){
+        holder.i = 1
+    }
+    holder.i++;
+    console.log(' holder', holder)
     return Math.ceil(Math.random()*4);
 }
   `;
@@ -70,7 +76,7 @@ const getDir = (robot, holder) => {
       clearInterval(this.interval);
     }
     const function1 = new Function(`${this.code};return getDir`)();
-    console.log('zzq see new direction ', function1({}, {}));
+    console.log('zzq see new direction ', function1({}, this.holder));
     this.time++;
   }
 }
