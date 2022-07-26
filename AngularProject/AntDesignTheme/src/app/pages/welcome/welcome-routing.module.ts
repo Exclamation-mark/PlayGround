@@ -8,6 +8,7 @@ import {SplitComponent} from './split/split.component';
 import {SplitV2Component} from './split-v2/split-v2.component';
 import {TreeComponent} from './tree/tree.component';
 import {EditorComponent} from './editor/editor.component';
+import {CustomScriptComponent} from './custom-script/custom-script.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'split', component: SplitComponent },
   { path: 'tree', component: TreeComponent },
   { path: 'editor', component: EditorComponent },
+  { path: 'CustomScript', component: CustomScriptComponent },
   { path: 'split-v2', component: SplitV2Component },
   { path: 'reSize', component: ResizeDemoComponent }
 ];

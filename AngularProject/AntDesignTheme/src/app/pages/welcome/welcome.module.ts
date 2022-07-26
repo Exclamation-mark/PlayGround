@@ -41,6 +41,7 @@ import { EditorComponent } from './editor/editor.component';
 import {NgProgressModule} from 'ngx-progressbar';
 import {PopoverModule} from 'ngx-smart-popover';
 import {NzSwitchModule} from 'ng-zorro-antd/switch';
+import { CustomScriptComponent } from './custom-script/custom-script.component';
 
 
 @NgModule({
@@ -91,7 +92,8 @@ import {NzSwitchModule} from 'ng-zorro-antd/switch';
     TreeComponent,
     TreeExpanderComponent,
     TreeContentComponent,
-    EditorComponent
+    EditorComponent,
+    CustomScriptComponent
   ],
   providers: [],
   exports: [WelcomeComponent],
