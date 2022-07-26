@@ -42,6 +42,7 @@ import {NgProgressModule} from 'ngx-progressbar';
 import {PopoverModule} from 'ngx-smart-popover';
 import {NzSwitchModule} from 'ng-zorro-antd/switch';
 import { CustomScriptComponent } from './custom-script/custom-script.component';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { CustomScriptComponent } from './custom-script/custom-script.component';
     PerfectScrollbarModule,
     NzInputModule,
     NgxSpinnerModule,
+    NzGridModule,
     NgProgressModule.withConfig({
       fixed: false,
       spinnerPosition: 'right',
