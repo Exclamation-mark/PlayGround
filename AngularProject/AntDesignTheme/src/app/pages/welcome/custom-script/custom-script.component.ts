@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./custom-script.component.less']
 })
 export class CustomScriptComponent implements OnInit {
-
+  isRunning = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onStart(): void {
+    this.isRunning = true;
+  }
+
+  onStop(): void {
+    this.isRunning = false;
+  }
 }
