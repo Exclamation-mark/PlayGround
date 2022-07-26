@@ -1,4 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import {MonacoStandaloneCodeEditor} from '@materia-ui/ngx-monaco-editor';
+import * as ts from 'typescript';
 
 class Point {
   x: number;
@@ -7,7 +9,8 @@ class Point {
   isWall: boolean;
 }
 class Robot{
-  direction = 0;
+  direction = 100;
+  readonly top = 103;
 
   public face(direction: number): void {
     if (Number.isInteger(direction)) {
@@ -26,13 +29,14 @@ export class CustomScriptComponent implements OnInit {
   y = 0;
   time = 0;
   isRunning = false;
-  editorOptions = {theme: 'vs-light', language: 'javascript'};
+  editorOptions = {theme: 'vs-light', language: 'typescript'};
   points: Point[][];
   holder = {};
   robot = new Robot();
   interval: any;
+  editor: MonacoStandaloneCodeEditor;
   code = `
-const getDir = (robot, holder) => {
+const getDir = (robot: Robot, holder: any) => {
     if(!holder.i){
         holder.i = 1
     }
@@ -40,7 +44,6 @@ const getDir = (robot, holder) => {
     console.log(' holder', holder)
     const newDirection = Math.random() * 4
     robot.face(newDirection)
-    return Math.ceil(newDirection);
 }
   `;
 
@@ -80,6 +83,34 @@ const getDir = (robot, holder) => {
     }
   }
 
+  onEditorReady(editor: MonacoStandaloneCodeEditor): void {
+    monaco.languages.typescript.javascriptDefaults.setDiagnosticsOptions({
+      noSemanticValidation: true,
+      noSyntaxValidation: false
+    });
+
+// compiler options
+    monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
+      target: monaco.languages.typescript.ScriptTarget.ES2020,
+      allowNonTsExtensions: true
+    });
+    const libSource = [
+      'declare class Robot {',
+      '    /**',
+      '     * Returns the next fact',
+      '     * @params direction ',
+      '     */',
+      '    public face(direction):void',
+      '    readonly top = 100',
+      '}'
+    ].join('\n');
+    const libUri = 'ts:filename/Robot.d.ts';
+    monaco.languages.typescript.javascriptDefaults.addExtraLib(libSource, libUri);
+    monaco.editor.createModel(libSource, 'typescript', monaco.Uri.parse(libUri));
+    console.log('zzq see add language');
+    this.editor = editor;
+  }
+
   private move(): void {
     if (this.x < this.points.length - 1 && this.y < this.points.length - 1) {
       if (this.time % 2 === 0) {
@@ -90,8 +121,9 @@ const getDir = (robot, holder) => {
     }else {
       clearInterval(this.interval);
     }
-    const function1 = new Function(`${this.code};return getDir`)();
-    console.log('zzq see new direction ', function1(this.robot, this.holder));
+    const tmpCode = ts.transpile(this.code);
+    const function1 = new Function(tmpCode)();
+    function1(this.robot, this.holder);
     console.log('zzq see direction', this.robot.direction);
     this.time++;
   }

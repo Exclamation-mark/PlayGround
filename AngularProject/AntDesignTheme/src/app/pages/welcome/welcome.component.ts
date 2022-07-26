@@ -25,7 +25,8 @@ export class WelcomeComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {}
 }

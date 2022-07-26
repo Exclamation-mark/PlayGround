@@ -28,7 +28,7 @@
     </div>
     <div nz-col nzSpan="12">
       <div class="content">
-        <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+        <ngx-monaco-editor (init)="onEditorReady($event)" [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
       </div>
     </div>
   </div>
