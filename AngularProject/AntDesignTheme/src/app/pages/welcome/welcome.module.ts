@@ -43,6 +43,7 @@ import {PopoverModule} from 'ngx-smart-popover';
 import {NzSwitchModule} from 'ng-zorro-antd/switch';
 import { CustomScriptComponent } from './custom-script/custom-script.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { CanvasTryComponent } from './canvas-try/canvas-try.component';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     TreeExpanderComponent,
     TreeContentComponent,
     EditorComponent,
-    CustomScriptComponent
+    CustomScriptComponent,
+    CanvasTryComponent
   ],
   providers: [],
   exports: [WelcomeComponent],
