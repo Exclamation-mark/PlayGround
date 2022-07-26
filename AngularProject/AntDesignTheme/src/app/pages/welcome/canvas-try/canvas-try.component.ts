@@ -20,8 +20,32 @@ export class CanvasTryComponent implements OnInit, AfterViewInit {
     const ctx = this.myCanvas.nativeElement.getContext('2d');
     if (ctx !== null) {
       this.context = ctx;
-      ctx.fillStyle = 'green';
-      ctx.fillRect(10, 10, 150, 100);
+      const grid = {
+        width: 0,
+        height: 0,
+      };
+
+      grid.width = 25;
+      grid.height = 25;
+      const canvasWidth = 500;
+      const canvasHeight = 500;
+
+      this.myCanvas.nativeElement.style.width = canvasWidth + 'px';
+      this.myCanvas.nativeElement.style.height = canvasWidth + 'px';
+      this.myCanvas.nativeElement.style.border = '1px solid black';
+      ctx.beginPath();
+      ctx.lineWidth = 1;
+      // @ts-ignore
+      ctx.lineStyle = 'black';
+      for (let x = 0; x < canvasWidth; x += canvasWidth / grid.width) {
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvasHeight);
+      }
+      for (let y = 0; y < canvasHeight; y += canvasHeight / grid.height) {
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvasWidth, y);
+      }
+      ctx.stroke();
     }
   }
 }
