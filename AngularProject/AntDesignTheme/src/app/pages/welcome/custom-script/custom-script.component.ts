@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomScriptComponent implements OnInit {
   isRunning = false;
+  editorOptions = {theme: 'vs-light', language: 'javascript'};
+  code = `
+function controlRobot(robot, holder){
+
+}
+  `;
   constructor() { }
 
   ngOnInit(): void {
