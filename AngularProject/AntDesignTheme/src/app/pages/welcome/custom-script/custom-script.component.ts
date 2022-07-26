@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 class Point {
   x: number;
@@ -13,14 +13,16 @@ class Point {
   styleUrls: ['./custom-script.component.less']
 })
 export class CustomScriptComponent implements OnInit {
-  x: 0;
-  y: 0;
+  x = 0;
+  y = 0;
+  time = 0;
   isRunning = false;
   editorOptions = {theme: 'vs-light', language: 'javascript'};
   points: Point[][];
+  interval: any;
   code = `
-function controlRobot(robot, holder){
-
+const getDir = (robot, holder) => {
+    return Math.ceil(Math.random()*4);
 }
   `;
 
@@ -43,9 +45,32 @@ function controlRobot(robot, holder){
 
   onStart(): void {
     this.isRunning = true;
+    this.x = 0;
+    this.y = 0;
+    this.interval = setInterval(() => {
+      this.move();
+    }, 200);
   }
 
   onStop(): void {
     this.isRunning = false;
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+  }
+
+  private move(): void {
+    if (this.x < this.points.length - 1 && this.y < this.points.length - 1) {
+      if (this.time % 2 === 0) {
+        this.x++;
+      } else {
+        this.y++;
+      }
+    }else {
+      clearInterval(this.interval);
+    }
+    const function1 = new Function(`${this.code};return getDir`)();
+    console.log('zzq see new direction ', function1({}, {}));
+    this.time++;
   }
 }

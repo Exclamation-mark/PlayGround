@@ -12,8 +12,7 @@
       <div class="content">
         <div
           class="robot-location"
-          [style.left]="x * 25"
-          [style.top]="y * 25"
+          [ngStyle]="{left: (x * 25) + 'px',top: (y*25 + 'px')}"
         ></div>
         <div class="maze-container">
           <div class="maze-line" *ngFor="let point of points">
