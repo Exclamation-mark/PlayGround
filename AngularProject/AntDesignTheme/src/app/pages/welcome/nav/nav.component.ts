@@ -13,6 +13,7 @@ import {db} from '../db';
 })
 export class NavComponent implements OnInit {
   tabs = ['Tab 1', 'Tab 2'];
+  selectValue = 'file';
   selectedIndex = 0;
   isIn = false;
   mode = false;
@@ -36,6 +37,9 @@ export class NavComponent implements OnInit {
     });
   }
 
+  onTypeChange(data: any): void {
+    this.message.success('see message ' + `<a style="color: red">${data}</a>`);
+  }
   closeTab({ index }: { index: number }): void {
     this.tabs.splice(index, 1);
   }

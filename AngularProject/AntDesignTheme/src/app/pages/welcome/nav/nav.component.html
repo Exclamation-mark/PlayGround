@@ -10,6 +10,12 @@
 <span class="a">p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 p 标签 </span>
 
 <perfect-scrollbar style="max-width: 600px; max-height: 400px;">
+  <div style="width: 100px;height: 45px;">
+    <select class="cus-sele" [(ngModel)]="selectValue" (ngModelChange)="onTypeChange($event)">
+      <option value="text">text</option>
+      <option value="file">file</option>
+    </select>
+  </div>
   <div style="height: 600px;background-color: pink;">
     Scrollable content {{tabs[selectedIndex]}}
 
