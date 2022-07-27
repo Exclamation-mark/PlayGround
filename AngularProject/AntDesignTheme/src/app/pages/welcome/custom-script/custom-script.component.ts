@@ -122,7 +122,7 @@ const getDir = (robot: Robot, holder: any) => {
       clearInterval(this.interval);
     }
     const tmpCode = ts.transpile(this.code);
-    const function1 = new Function(tmpCode)();
+    const function1 = new Function(tmpCode);
     function1(this.robot, this.holder);
     console.log('zzq see direction', this.robot.direction);
     this.time++;
