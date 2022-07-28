@@ -44,6 +44,7 @@ import {NzSwitchModule} from 'ng-zorro-antd/switch';
 import { CustomScriptComponent } from './custom-script/custom-script.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { CanvasTryComponent } from './canvas-try/canvas-try.component';
+import { NativeElementComponent } from './native-element/native-element.component';
 
 
 @NgModule({
@@ -97,7 +98,8 @@ import { CanvasTryComponent } from './canvas-try/canvas-try.component';
     TreeContentComponent,
     EditorComponent,
     CustomScriptComponent,
-    CanvasTryComponent
+    CanvasTryComponent,
+    NativeElementComponent
   ],
   providers: [],
   exports: [WelcomeComponent],
