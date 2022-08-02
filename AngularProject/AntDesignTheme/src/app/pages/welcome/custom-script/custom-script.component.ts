@@ -89,7 +89,6 @@ const getDir = (robot: Robot, holder: any) => {
       noSyntaxValidation: false
     });
 
-// compiler options
     monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
       target: monaco.languages.typescript.ScriptTarget.ES2020,
       allowNonTsExtensions: true
@@ -107,7 +106,6 @@ const getDir = (robot: Robot, holder: any) => {
     const libUri = 'ts:filename/Robot.d.ts';
     monaco.languages.typescript.javascriptDefaults.addExtraLib(libSource, libUri);
     monaco.editor.createModel(libSource, 'typescript', monaco.Uri.parse(libUri));
-    console.log('zzq see add language');
     this.editor = editor;
   }
 
