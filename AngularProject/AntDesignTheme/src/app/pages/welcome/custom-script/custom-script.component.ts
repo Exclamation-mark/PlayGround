@@ -98,7 +98,7 @@ const getDir = (robot: Robot, holder: any) => {
       'declare class Robot {',
       '    /**',
       '     * Returns the next fact',
-      '     * @params direction ',
+      '     * @params direction',
       '     */',
       '    public face(direction):void',
       '    readonly top = 100',
@@ -124,7 +124,7 @@ const getDir = (robot: Robot, holder: any) => {
     const tmpCode = ts.transpile(this.code);
     const function1 = new Function(tmpCode);
     function1(this.robot, this.holder);
-    console.log('zzq see direction', this.robot.direction);
+    console.log('zzq see new direction', this.robot.direction);
     this.time++;
   }
 }
