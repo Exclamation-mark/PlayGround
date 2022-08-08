@@ -54,9 +54,10 @@ export class EditorComponent implements OnInit {
         config: {
           types: 'image/*, video/mp4',
           endpoints: {
-            byFile: '/api/transport/image',
+            byFile: encodeURI('http://localhost:2208/api/file?from=http://localhost:2208'),
             byUrl: '/api/transport/fetch',
           },
+          field: 'file',
           additionalRequestData: {
             map: JSON.stringify({
               url: 'file:url',
