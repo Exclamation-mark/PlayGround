@@ -47,7 +47,26 @@ export class EditorComponent implements OnInit {
           placeholder: '',
         },
       },
-      image: SimpleImage,
+
+      image: {
+        class: Image,
+        inlineToolbar: true,
+        config: {
+          types: 'image/*, video/mp4',
+          endpoints: {
+            byFile: '/api/transport/image',
+            byUrl: '/api/transport/fetch',
+          },
+          additionalRequestData: {
+            map: JSON.stringify({
+              url: 'file:url',
+              size: 'file:size',
+              mimetype: 'file:mime',
+            }),
+          },
+        },
+      },
+
       linkTool: {
         class: LinkTool,
         config: {
