@@ -6,6 +6,8 @@ import Header from '@editorjs/header';
 // @ts-ignore
 import Image from '@editorjs/image';
 // @ts-ignore
+import SimpleImage from '@editorjs/simple-image';
+// @ts-ignore
 import CodeTool from '@editorjs/code';
 // @ts-ignore
 import List from '@editorjs/list';
@@ -45,26 +47,7 @@ export class EditorComponent implements OnInit {
           placeholder: '',
         },
       },
-
-      image: {
-        class: Image,
-        inlineToolbar: true,
-        config: {
-          types: 'image/*, video/mp4',
-          endpoints: {
-            byFile: '/api/transport/image',
-            byUrl: '/api/transport/fetch',
-          },
-          additionalRequestData: {
-            map: JSON.stringify({
-              url: 'file:url',
-              size: 'file:size',
-              mimetype: 'file:mime',
-            }),
-          },
-        },
-      },
-
+      image: SimpleImage,
       linkTool: {
         class: LinkTool,
         config: {
