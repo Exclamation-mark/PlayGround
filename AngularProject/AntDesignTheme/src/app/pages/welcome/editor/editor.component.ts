@@ -1,7 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import EditorJS from '@editorjs/editorjs';
 import {CustomImage} from './plugins/image';
-
+// @ts-ignore
+import Header from '@editorjs/header';
+// @ts-ignore
+import Image from '@editorjs/image';
+// @ts-ignore
+import CodeTool from '@editorjs/code';
+// @ts-ignore
+import List from '@editorjs/list';
+// @ts-ignore
+import Delimiter from '@editorjs/delimiter';
+// @ts-ignore
+import Table from '@editorjs/table';
+// @ts-ignore
+import Warning from '@editorjs/warning';
+// @ts-ignore
+import Checklist from '@editorjs/checklist';
+// @ts-ignore
+import LinkTool from '@editorjs/link';
+// @ts-ignore
+import RawTool from '@editorjs/raw';
+// @ts-ignore
+import Embed from '@editorjs/embed';
+// @ts-ignore
+import InlineCode from '@editorjs/inline-code';
+// @ts-ignore
+import Marker from '@editorjs/marker';
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
@@ -13,7 +38,83 @@ export class EditorComponent implements OnInit {
   editor = new EditorJS({
     readOnly: false,
     tools: {
-      image: CustomImage
+      header: {
+        class: Header,
+        inlineToolbar: ['marker', 'inlineCode'],
+        config: {
+          placeholder: '',
+        },
+      },
+
+      image: {
+        class: Image,
+        inlineToolbar: true,
+        config: {
+          types: 'image/*, video/mp4',
+          endpoints: {
+            byFile: '/api/transport/image',
+            byUrl: '/api/transport/fetch',
+          },
+          additionalRequestData: {
+            map: JSON.stringify({
+              url: 'file:url',
+              size: 'file:size',
+              mimetype: 'file:mime',
+            }),
+          },
+        },
+      },
+
+      linkTool: {
+        class: LinkTool,
+        config: {
+          endpoint: '/api/fetchUrl',
+        },
+      },
+
+      code: {
+        class: CodeTool,
+        shortcut: 'CMD+SHIFT+D',
+      },
+
+      list: {
+        class: List,
+        inlineToolbar: true,
+      },
+
+      delimiter: Delimiter,
+
+      table: {
+        class: Table,
+        inlineToolbar: true,
+      },
+
+      warning: {
+        class: Warning,
+        inlineToolbar: true,
+      },
+
+      checklist: {
+        class: Checklist,
+        inlineToolbar: true,
+      },
+
+      /**
+       * Inline Tools
+       */
+      inlineCode: {
+        class: InlineCode,
+        shortcut: 'CMD+SHIFT+C',
+      },
+
+      marker: {
+        class: Marker,
+        shortcut: 'CMD+SHIFT+M',
+      },
+
+      raw: RawTool,
+
+      embed: Embed,
     },
     data: {
       time: 1552744582955,
@@ -41,9 +142,13 @@ export class EditorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getJson() {
+  getJson(): void {
     this.editor.save().then((res) => {
       this.code = JSON.stringify(res, null, '\t');
     });
+  }
+
+  readOnly(): void {
+    this.editor.readOnly.toggle();
   }
 }
