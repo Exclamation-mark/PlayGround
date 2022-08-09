@@ -5,7 +5,7 @@
 >
   <div class="btn-g">
     <button style="margin: 3px" nz-button nzType="primary" (click)="run()"
-    >全屏</button>
+    >{{isFull? '退出全屏' : '全屏' }}</button>
   </div>
   <div class="e">
     <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
