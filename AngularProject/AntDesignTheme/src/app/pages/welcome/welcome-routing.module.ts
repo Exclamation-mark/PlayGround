@@ -11,6 +11,7 @@ import {EditorComponent} from './editor/editor.component';
 import {CustomScriptComponent} from './custom-script/custom-script.component';
 import {CanvasTryComponent} from './canvas-try/canvas-try.component';
 import {NativeElementComponent} from './native-element/native-element.component';
+import {ImageShownComponent} from './image-shown/image-shown.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'editor', component: EditorComponent },
   { path: 'CustomScript', component: CustomScriptComponent },
   { path: 'NativeElement', component: NativeElementComponent },
+  { path: 'ImageHolder', component: ImageShownComponent },
   { path: 'Canvas', component: CanvasTryComponent },
   { path: 'split-v2', component: SplitV2Component },
   { path: 'reSize', component: ResizeDemoComponent }
