@@ -46,6 +46,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { CanvasTryComponent } from './canvas-try/canvas-try.component';
 import { NativeElementComponent } from './native-element/native-element.component';
 import { ImageShownComponent } from './image-shown/image-shown.component';
+import { FullScreenComponent } from './full-screen/full-screen.component';
 
 
 @NgModule({
@@ -101,7 +102,8 @@ import { ImageShownComponent } from './image-shown/image-shown.component';
     CustomScriptComponent,
     CanvasTryComponent,
     NativeElementComponent,
-    ImageShownComponent
+    ImageShownComponent,
+    FullScreenComponent
   ],
   providers: [],
   exports: [WelcomeComponent],
