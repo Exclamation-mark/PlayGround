@@ -47,42 +47,44 @@ import { CanvasTryComponent } from './canvas-try/canvas-try.component';
 import { NativeElementComponent } from './native-element/native-element.component';
 import { ImageShownComponent } from './image-shown/image-shown.component';
 import { FullScreenComponent } from './full-screen/full-screen.component';
+import {NgxFullscreenModule} from '@ultimate/ngx-fullscreen';
 
 
 @NgModule({
-  imports: [
-    WelcomeRoutingModule,
-    CommonModule,
-    NzTabsModule,
-    AngularSplitModule,
-    NzCollapseModule,
-    NzMessageModule,
-    NzButtonModule,
-    NzMenuModule,
-    NzIconModule,
-    NzDropDownModule,
-    NzRadioModule,
-    NgxResizableModule,
-    ResizeObserverModule,
-    FormsModule,
-    MonacoEditorModule,
-    AgGridModule,
-    NzSelectModule,
-    NzToolTipModule,
-    TreeModule,
-    PerfectScrollbarModule,
-    NzInputModule,
-    NgxSpinnerModule,
-    NzGridModule,
-    NgProgressModule.withConfig({
-      fixed: false,
-      spinnerPosition: 'right',
-      ease: 'linear',
-      color: '#5c6bc0'
-    }),
-    PopoverModule,
-    NzSwitchModule,
-  ],
+    imports: [
+        WelcomeRoutingModule,
+        CommonModule,
+        NzTabsModule,
+        AngularSplitModule,
+        NzCollapseModule,
+        NzMessageModule,
+        NzButtonModule,
+        NzMenuModule,
+        NzIconModule,
+        NzDropDownModule,
+        NzRadioModule,
+        NgxResizableModule,
+        ResizeObserverModule,
+        FormsModule,
+        MonacoEditorModule,
+        AgGridModule,
+        NzSelectModule,
+        NzToolTipModule,
+        TreeModule,
+        PerfectScrollbarModule,
+        NzInputModule,
+        NgxSpinnerModule,
+        NzGridModule,
+        NgProgressModule.withConfig({
+            fixed: false,
+            spinnerPosition: 'right',
+            ease: 'linear',
+            color: '#5c6bc0'
+        }),
+        PopoverModule,
+        NzSwitchModule,
+        NgxFullscreenModule,
+    ],
   declarations: [
     WelcomeComponent,
     CustomHeaderComponent,
