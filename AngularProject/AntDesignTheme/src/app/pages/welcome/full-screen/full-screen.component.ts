@@ -11,6 +11,7 @@ export class FullScreenComponent implements OnInit, AfterViewInit {
   editorOptions = {theme: 'vs-light', language: 'json'};
   code = '';
   isFull = false;
+  ifFullBrowser = false;
 
   constructor() {
   }
@@ -42,5 +43,9 @@ export class FullScreenComponent implements OnInit, AfterViewInit {
       this.isFull = true;
       this.fullscreen.enter();
     }
+  }
+
+  run2(): void {
+    this.ifFullBrowser = !this.ifFullBrowser;
   }
 }
