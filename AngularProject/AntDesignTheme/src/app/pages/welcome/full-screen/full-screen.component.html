@@ -1,0 +1,16 @@
+<div class="container"
+     [class.fullScreen]="ifFullBrowser"
+     #c
+     [ngxFullscreen]="c"
+     #fullscreen="ngxFullscreen"
+>
+  <div class="btn-g">
+    <button *ngIf="!ifFullBrowser" style="margin: 3px" nz-button nzType="primary" (click)="run()"
+    >{{isFull? '退出全屏' : '全屏' }}</button>
+    <button *ngIf="!isFull" style="margin: 3px" nz-button nzType="primary" (click)="run2()"
+    >{{ifFullBrowser? '退出全屏' : '浏览器内全屏' }}</button>
+  </div>
+  <div class="e">
+    <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+  </div>
+</div>
