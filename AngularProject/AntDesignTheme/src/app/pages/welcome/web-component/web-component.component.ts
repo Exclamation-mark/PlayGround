@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injector, OnInit} from '@angular/core';
+import {createCustomElement} from '@angular/elements';
+import {MonacoInputComponent} from './monaco-input/monaco-input.component';
 
 @Component({
   selector: 'app-web-component',
@@ -10,6 +12,12 @@ export class WebComponentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      const monin = document.createElement('monaco-input-component');
+      const element = document.getElementById('ccc');
+      // @ts-ignore
+      element.appendChild(monin);
+    }, 3000);
   }
 
   run(): void {

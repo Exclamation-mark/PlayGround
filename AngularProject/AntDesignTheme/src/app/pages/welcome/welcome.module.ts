@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { WelcomeRoutingModule } from './welcome-routing.module';
 
@@ -107,11 +107,14 @@ import { MonacoInputComponent } from './web-component/monaco-input/monaco-input.
     CanvasTryComponent,
     NativeElementComponent,
     ImageShownComponent,
+    MonacoInputComponent,
     FullScreenComponent,
-    WebComponentComponent,
-    MonacoInputComponent
+    WebComponentComponent
   ],
   providers: [],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
   exports: [WelcomeComponent],
 })
 export class WelcomeModule {}
