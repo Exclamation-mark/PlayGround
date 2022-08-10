@@ -28,19 +28,18 @@ export class FullScreenComponent implements OnInit, AfterViewInit {
     this.code = JSON.stringify(a, null, '\t');
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.fullscreen.transition
       .subscribe((change: NgxFullscreenTransition) => {
+        this.isFull = change.isFullscreen;
         console.log(change); // { isFullscreen: boolean, element: Element }
       });
   }
 
   run(): void {
     if (this.isFull) {
-      this.isFull = false;
       this.fullscreen.exit();
     }else {
-      this.isFull = true;
       this.fullscreen.enter();
     }
   }
