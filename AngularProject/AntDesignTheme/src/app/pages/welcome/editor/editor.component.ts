@@ -29,6 +29,7 @@ import Embed from '@editorjs/embed';
 import InlineCode from '@editorjs/inline-code';
 // @ts-ignore
 import Marker from '@editorjs/marker';
+import {JsonEditor} from './plugins/json-editor';
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
@@ -47,7 +48,7 @@ export class EditorComponent implements OnInit {
           placeholder: '',
         },
       },
-
+      json: JsonEditor,
       image: {
         class: Image,
         inlineToolbar: true,
