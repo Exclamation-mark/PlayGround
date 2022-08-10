@@ -22,4 +22,10 @@ export class MonacoInputComponent implements OnInit, OnChanges {
     this.editorOptions = {...this.editorOptions, readOnly: this.iro};
   }
 
+  handleEvent(event: any): any {
+    console.log('get event in content', event);
+    if (event.keyCode === 13) {
+      event.cancelBubble = true;
+    }
+  }
 }
