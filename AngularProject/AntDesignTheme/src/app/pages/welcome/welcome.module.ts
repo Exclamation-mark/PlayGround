@@ -49,6 +49,7 @@ import { ImageShownComponent } from './image-shown/image-shown.component';
 import { FullScreenComponent } from './full-screen/full-screen.component';
 import {NgxFullscreenModule} from '@ultimate/ngx-fullscreen';
 import { WebComponentComponent } from './web-component/web-component.component';
+import { MonacoInputComponent } from './web-component/monaco-input/monaco-input.component';
 
 
 @NgModule({
@@ -107,7 +108,8 @@ import { WebComponentComponent } from './web-component/web-component.component';
     NativeElementComponent,
     ImageShownComponent,
     FullScreenComponent,
-    WebComponentComponent
+    WebComponentComponent,
+    MonacoInputComponent
   ],
   providers: [],
   exports: [WelcomeComponent],
