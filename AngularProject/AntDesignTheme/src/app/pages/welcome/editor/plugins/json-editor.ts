@@ -5,6 +5,7 @@ export class JsonEditor implements BlockTool {
   private api: API;
   private readOnly: boolean;
   private data: any;
+  private dataElement: any;
 
   constructor({data, api, readOnly}: BlockToolConstructorOptions<any>) {
     this.data = data;
@@ -31,16 +32,24 @@ export class JsonEditor implements BlockTool {
 
   render(): HTMLElement {
     this.wrapper = document.createElement('div');
-    const input = document.createElement('monaco-input-component');
-    this.wrapper.appendChild(input);
+    this.dataElement = document.createElement('monaco-input-component');
+    this.wrapper.appendChild(this.dataElement);
     return this.wrapper;
   }
 
 
   save(blockContent: HTMLElement): any {
-    return {
-      json: {zzq: 'hha'}
-    };
+    const data = this.dataElement.getData;
+    console.log('zzq see edited data', data);
+    try {
+      if (data) {
+        return JSON.parse(data);
+      }else {
+        return {d: 'empty'};
+      }
+    } catch (e) {
+      return e;
+    }
   }
 
   validate(savedData: any): any {
