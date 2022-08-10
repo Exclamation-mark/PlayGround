@@ -8,11 +8,11 @@ import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, Si
 export class MonacoInputComponent implements OnInit, OnChanges, OnDestroy {
   @Output() c = new EventEmitter();
   @Input() iro = false;
+  @Input() code = '';
   @Input() get getData(): string {
     return this.code;
   }
   editorOptions = {theme: 'vs-light', language: 'json', readOnly: false};
-  code = '';
 
   constructor() {
   }
@@ -22,7 +22,9 @@ export class MonacoInputComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('zzq see changed', changes);
-    this.editorOptions = {...this.editorOptions, readOnly: this.iro};
+    if (changes.iro) {
+      this.editorOptions = {...this.editorOptions, readOnly: this.iro};
+    }
   }
 
   handleEvent(event: any): any {
