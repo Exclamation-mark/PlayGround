@@ -12,6 +12,8 @@ export class MonacoInputComponent implements OnInit, OnChanges, OnDestroy {
   @Input() get getData(): string {
     return this.code;
   }
+
+  isFull = false;
   editorOptions = {theme: 'vs-light', language: 'json', readOnly: false};
 
   constructor() {
@@ -36,5 +38,10 @@ export class MonacoInputComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnDestroy(): void {
     console.log('monin destroy');
+  }
+
+  fullScreen(): void {
+    console.log('click');
+    this.isFull = !this.isFull;
   }
 }
