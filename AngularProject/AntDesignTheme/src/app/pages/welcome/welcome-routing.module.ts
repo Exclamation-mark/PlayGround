@@ -11,6 +11,7 @@ import {EditorComponent} from './editor/editor.component';
 import {CustomScriptComponent} from './custom-script/custom-script.component';
 import {CanvasTryComponent} from './canvas-try/canvas-try.component';
 import {NativeElementComponent} from './native-element/native-element.component';
+import {WebComponentComponent} from './web-component/web-component.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'tree', component: TreeComponent },
   { path: 'editor', component: EditorComponent },
   { path: 'CustomScript', component: CustomScriptComponent },
+  { path: 'wc', component: WebComponentComponent },
   { path: 'NativeElement', component: NativeElementComponent },
   { path: 'Canvas', component: CanvasTryComponent },
   { path: 'split-v2', component: SplitV2Component },

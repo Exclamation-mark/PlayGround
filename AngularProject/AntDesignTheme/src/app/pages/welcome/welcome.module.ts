@@ -45,6 +45,7 @@ import { CustomScriptComponent } from './custom-script/custom-script.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { CanvasTryComponent } from './canvas-try/canvas-try.component';
 import { NativeElementComponent } from './native-element/native-element.component';
+import { WebComponentComponent } from './web-component/web-component.component';
 
 
 @NgModule({
@@ -99,7 +100,8 @@ import { NativeElementComponent } from './native-element/native-element.componen
     EditorComponent,
     CustomScriptComponent,
     CanvasTryComponent,
-    NativeElementComponent
+    NativeElementComponent,
+    WebComponentComponent
   ],
   providers: [],
   exports: [WelcomeComponent],
