@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./web-component.component.less']
 })
 export class WebComponentComponent implements OnInit {
-
+  v = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  run(): void {
+    this.v = !this.v;
+  }
 }

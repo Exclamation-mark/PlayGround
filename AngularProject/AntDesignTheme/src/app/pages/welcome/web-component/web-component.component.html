@@ -1,1 +1,4 @@
-<app-monaco-input></app-monaco-input>
+<button nz-button nzType="primary" (click)="run()"
+>更改值：{{ v }}</button>
+<div style="width: 100%;height: 10px"></div>
+<app-monaco-input [iro]="v"></app-monaco-input>
