@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {createSchema} from 'genson-js/dist';
 
 @Component({
   selector: 'app-json-schema',
@@ -21,5 +22,12 @@ export class JsonSchemaComponent implements OnInit {
   }
 
   run(): void {
+    try {
+      const s = JSON.parse(this.rightCode);
+      const schema = createSchema(s);
+      this.leftCode = JSON.stringify(schema, null, '\t');
+    }catch (e) {
+      this.leftCode = JSON.stringify(e, null, '\t');
+    }
   }
 }
