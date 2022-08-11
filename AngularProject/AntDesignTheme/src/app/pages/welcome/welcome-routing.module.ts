@@ -14,6 +14,7 @@ import {NativeElementComponent} from './native-element/native-element.component'
 import {WebComponentComponent} from './web-component/web-component.component';
 import {ImageShownComponent} from './image-shown/image-shown.component';
 import {FullScreenComponent} from './full-screen/full-screen.component';
+import {JsonSchemaComponent} from './json-schema/json-schema.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'NativeElement', component: NativeElementComponent },
   { path: 'ImageHolder', component: ImageShownComponent },
   { path: 'full-screen', component: FullScreenComponent },
+  { path: 'JsonSchema', component: JsonSchemaComponent },
   { path: 'Canvas', component: CanvasTryComponent },
   { path: 'split-v2', component: SplitV2Component },
   { path: 'reSize', component: ResizeDemoComponent }

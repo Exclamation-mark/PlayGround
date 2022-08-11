@@ -50,43 +50,46 @@ import { FullScreenComponent } from './full-screen/full-screen.component';
 import {NgxFullscreenModule} from '@ultimate/ngx-fullscreen';
 import { WebComponentComponent } from './web-component/web-component.component';
 import { MonacoInputComponent } from './web-component/monaco-input/monaco-input.component';
+import { JsonSchemaComponent } from './json-schema/json-schema.component';
+import {NzModalModule} from 'ng-zorro-antd/modal';
 
 
 @NgModule({
-    imports: [
-        WelcomeRoutingModule,
-        CommonModule,
-        NzTabsModule,
-        AngularSplitModule,
-        NzCollapseModule,
-        NzMessageModule,
-        NzButtonModule,
-        NzMenuModule,
-        NzIconModule,
-        NzDropDownModule,
-        NzRadioModule,
-        NgxResizableModule,
-        ResizeObserverModule,
-        FormsModule,
-        MonacoEditorModule,
-        AgGridModule,
-        NzSelectModule,
-        NzToolTipModule,
-        TreeModule,
-        PerfectScrollbarModule,
-        NzInputModule,
-        NgxSpinnerModule,
-        NzGridModule,
-        NgProgressModule.withConfig({
-            fixed: false,
-            spinnerPosition: 'right',
-            ease: 'linear',
-            color: '#5c6bc0'
-        }),
-        PopoverModule,
-        NzSwitchModule,
-        NgxFullscreenModule,
-    ],
+  imports: [
+    WelcomeRoutingModule,
+    CommonModule,
+    NzTabsModule,
+    AngularSplitModule,
+    NzCollapseModule,
+    NzMessageModule,
+    NzButtonModule,
+    NzMenuModule,
+    NzIconModule,
+    NzDropDownModule,
+    NzRadioModule,
+    NgxResizableModule,
+    ResizeObserverModule,
+    FormsModule,
+    MonacoEditorModule,
+    AgGridModule,
+    NzSelectModule,
+    NzToolTipModule,
+    TreeModule,
+    PerfectScrollbarModule,
+    NzInputModule,
+    NgxSpinnerModule,
+    NzGridModule,
+    NgProgressModule.withConfig({
+      fixed: false,
+      spinnerPosition: 'right',
+      ease: 'linear',
+      color: '#5c6bc0'
+    }),
+    PopoverModule,
+    NzSwitchModule,
+    NgxFullscreenModule,
+    NzModalModule,
+  ],
   declarations: [
     WelcomeComponent,
     CustomHeaderComponent,
@@ -109,7 +112,8 @@ import { MonacoInputComponent } from './web-component/monaco-input/monaco-input.
     ImageShownComponent,
     MonacoInputComponent,
     FullScreenComponent,
-    WebComponentComponent
+    WebComponentComponent,
+    JsonSchemaComponent
   ],
   providers: [],
   schemas: [
