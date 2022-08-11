@@ -57,6 +57,7 @@
     "ngx-smart-popover": "^1.5.0",
     "ngx-spinner": "^13.0.0",
     "rxjs": "~6.6.0",
+    "to-json-schema": "^0.2.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
   },

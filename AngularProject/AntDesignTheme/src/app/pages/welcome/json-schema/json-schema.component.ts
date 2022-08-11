@@ -33,6 +33,16 @@ export class JsonSchemaComponent implements OnInit {
     }
   }
 
+  run2(): void {
+    try {
+      const s = JSON.parse(this.rightCode);
+      const schema = createSchema(s, {noRequired: true});
+      this.leftCode = JSON.stringify(schema, null, '\t');
+    }catch (e) {
+      this.leftCode = JSON.stringify(e, null, '\t');
+    }
+  }
+
   merage(): void {
     const merged = mergeSchemas([
       JSON.parse(this.rightCode),
