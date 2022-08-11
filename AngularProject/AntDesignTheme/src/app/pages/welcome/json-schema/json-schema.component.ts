@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {createSchema} from 'genson-js/dist';
+import {createSchema, mergeSchemas} from 'genson-js/dist';
 
 @Component({
   selector: 'app-json-schema',
@@ -8,7 +8,9 @@ import {createSchema} from 'genson-js/dist';
 })
 export class JsonSchemaComponent implements OnInit {
   editorOptions = {theme: 'vs-light', language: 'json', readOnly: false};
+  mergedCode = '';
   leftCode = '';
+  isVisible = false;
   rightCode = `
   {
     "a": 12,
@@ -29,5 +31,14 @@ export class JsonSchemaComponent implements OnInit {
     }catch (e) {
       this.leftCode = JSON.stringify(e, null, '\t');
     }
+  }
+
+  merage(): void {
+    const merged = mergeSchemas([
+      JSON.parse(this.rightCode),
+      JSON.parse(this.leftCode)
+    ]);
+    this.mergedCode = JSON.stringify(merged, null, '\t');
+    this.isVisible = true;
   }
 }
