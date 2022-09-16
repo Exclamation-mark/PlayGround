@@ -1,3 +1,13 @@
-<div class="imc" (keydown.enter)="handleEvent($event)">
-  <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+<div class="imc"
+     [class.fullScreen2]="isFull"
+>
+  <div class="pp" [class.fullScreen]="isFull">
+    <div class="btn-g">
+      <button style="margin: 3px;" nz-button nzType="primary" (click)="fullScreen()"
+      >{{isFull? '退出全屏' : '浏览器内全屏' }}</button>
+    </div>
+    <div class="e">
+      <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+    </div>
+  </div>
 </div>

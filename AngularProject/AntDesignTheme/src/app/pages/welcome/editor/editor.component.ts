@@ -137,6 +137,13 @@ export class EditorComponent implements OnInit {
             text: 'asd'
           }
         },
+        {
+          id: 'ghhjkkjjnnbb',
+          type: 'json',
+          data: {
+            text: 'asd'
+          }
+        },
       ],
       version: '2.11.10'
     }

@@ -31,8 +31,12 @@ export class JsonEditor implements BlockTool {
   }
 
   render(): HTMLElement {
+    console.log('now data is', this.data);
+    console.log('this.readOnly', this.readOnly);
     this.wrapper = document.createElement('div');
     this.dataElement = document.createElement('monaco-input-component');
+    this.dataElement.iro = this.readOnly;
+    this.dataElement.code = JSON.stringify(this.data);
     this.wrapper.appendChild(this.dataElement);
     return this.wrapper;
   }
